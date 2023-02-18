@@ -21,11 +21,11 @@ const CartScreen = () => {
     <Layout title="Panier d'achats">
       <h1 className="mb-4 text-xl">Panier d'achats</h1>
       {cartItems.length === 0 ? (
-        <div className="flex">
-          Le panier est vide. <Link href="/">Retour à la page d'accueil</Link>
+        <div>
+          Le panier est vide. <Link href="/">Continuer mes achats</Link>
         </div>
       ) : (
-        <div className="flex justify-between">
+       
           <div className="grid md:grid-cols-4 md:gap-5">
             <div className="overflow-x-auto md:col-span-3">
               <table className="min-w-full">
@@ -39,7 +39,7 @@ const CartScreen = () => {
                 </thead>
                 <tbody>
                   {cartItems.map((item) => (
-                    <tr key={item._id} className="border-b">
+                    <tr key={item.slug} className="border-b">
                       <td>
                         <Link href={`/product/${item.slug}`}>
                           <p className="flex items-center">
@@ -54,7 +54,7 @@ const CartScreen = () => {
                         </Link>
                       </td>
                       <td className="p-5 text-right">{item.quantity}</td>
-                      <td className="p-5 text-right">{item.price}</td>
+                      <td className="p-5 text-right">${item.price}</td>
                       <td className="p-5 text-center">
                         <button onClick={() => removeItemHandler(item)}>
                           <XCircleIcon className="h-5 w-5"></XCircleIcon>
@@ -65,13 +65,13 @@ const CartScreen = () => {
                 </tbody>
               </table>
             </div>
-          </div>
+          
           <div className="card p-5">
             <ul>
               <li>
                 <div className="pb-3 text-xl">
                   Sous Total ({cartItems.reduce((a, c) => a + c.quantity, 0)}) :
-                  $ {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                  ${cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                 </div>
               </li>
               <li>
