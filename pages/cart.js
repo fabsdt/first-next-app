@@ -17,6 +17,11 @@ const CartScreen = () => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: item });
   };
 
+  const updateCartHandler = (item, qty) => {
+    const quantity = Number(qty);
+    dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
+  };
+
   return (
     <Layout title="Panier d'achats">
       <h1 className="mb-4 text-xl">Panier d'achats</h1>
@@ -25,47 +30,59 @@ const CartScreen = () => {
           Le panier est vide. <Link href="/">Continuer mes achats</Link>
         </div>
       ) : (
-       
-          <div className="grid md:grid-cols-4 md:gap-5">
-            <div className="overflow-x-auto md:col-span-3">
-              <table className="min-w-full">
-                <thead className="border-b">
-                  <tr>
-                    <th className="px-5 text-left">Article</th>
-                    <th className="p-5 text-right">Quantité</th>
-                    <th className="p-5 text-right">Prix</th>
-                    <th className="p-5">Retirer</th>
+        <div className="grid md:grid-cols-4 md:gap-5">
+          <div className="overflow-x-auto md:col-span-3">
+            <table className="min-w-full">
+              <thead className="border-b">
+                <tr>
+                  <th className="px-5 text-left">Article</th>
+                  <th className="p-5 text-right">Quantité</th>
+                  <th className="p-5 text-right">Prix</th>
+                  <th className="p-5">Retirer</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr key={item.slug} className="border-b">
+                    <td>
+                      <Link href={`/product/${item.slug}`}>
+                        <p className="flex items-center">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            width={50}
+                            height={50}
+                          ></Image>
+                          &nbsp; {item.name}
+                        </p>
+                      </Link>
+                    </td>
+                    <td className="p-5 text-right">
+                      <select
+                        value={item.quantity}
+                        onChange={(e) =>
+                          updateCartHandler(item, e.target.value)
+                        }
+                      >
+                        {[...Array(item.countInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </select>
+                    </td>
+                    <td className="p-5 text-right">${item.price}</td>
+                    <td className="p-5 text-center">
+                      <button onClick={() => removeItemHandler(item)}>
+                        <XCircleIcon className="h-5 w-5"></XCircleIcon>
+                      </button>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {cartItems.map((item) => (
-                    <tr key={item.slug} className="border-b">
-                      <td>
-                        <Link href={`/product/${item.slug}`}>
-                          <p className="flex items-center">
-                            <Image
-                              src={item.image}
-                              alt={item.name}
-                              width={50}
-                              height={50}
-                            ></Image>
-                            &nbsp; {item.name}
-                          </p>
-                        </Link>
-                      </td>
-                      <td className="p-5 text-right">{item.quantity}</td>
-                      <td className="p-5 text-right">${item.price}</td>
-                      <td className="p-5 text-center">
-                        <button onClick={() => removeItemHandler(item)}>
-                          <XCircleIcon className="h-5 w-5"></XCircleIcon>
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          
+                ))}
+              </tbody>
+            </table>
+          </div>
+
           <div className="card p-5">
             <ul>
               <li>
