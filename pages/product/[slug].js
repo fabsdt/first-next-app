@@ -1,16 +1,30 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useContext } from 'react';
 import Layout from '../../components/Layout';
 import data from '../../utils/data';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Store } from '../../utils/Store';
 
 const ProductScreen = () => {
+  const { state, dispatch } = useContext(Store);
   const { query } = useRouter();
   const { slug } = query;
   const product = data.products.find((x) => x.slug === slug);
   if (!product) {
     return <div>Article introuvable</div>;
+  }
+
+  const addToCartHandler = () => {  
+    const existItem =  state.cart.cartItems.find((x) => x.slug === product.slug)
+    const quantity = existItem ? existItem.quantity + 1 : 1
+
+    if (product.countInStock < quantity) {
+      alert('Désolé, cet article est en rupture de stock.')
+      return;
+    }
+
+    dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } })    
   }
 
   return (
@@ -46,7 +60,7 @@ const ProductScreen = () => {
               <div>Statut</div>
               <div>{product.countInStock > 0 ? 'En stock' : 'Sur commande'}</div>
             </div>
-            <button className="primary-button w-full">Ajouter au panier</button>
+            <button className="primary-button w-full" onClick={addToCartHandler}>Ajouter au panier</button>
           </div>
         </div>
       </div>
