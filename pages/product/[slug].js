@@ -8,6 +8,7 @@ import { Store } from '../../utils/Store';
 
 const ProductScreen = () => {
   const { state, dispatch } = useContext(Store);
+  const router = useRouter();
   const { query } = useRouter();
   const { slug } = query;
   const product = data.products.find((x) => x.slug === slug);
@@ -15,17 +16,18 @@ const ProductScreen = () => {
     return <div>Article introuvable</div>;
   }
 
-  const addToCartHandler = () => {  
-    const existItem =  state.cart.cartItems.find((x) => x.slug === product.slug)
-    const quantity = existItem ? existItem.quantity + 1 : 1
+  const addToCartHandler = () => {
+    const existItem = state.cart.cartItems.find((x) => x.slug === product.slug);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
 
     if (product.countInStock < quantity) {
-      alert('Désolé, cet article est en rupture de stock.')
+      alert('Désolé, cet article est en rupture de stock.');
       return;
     }
 
-    dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } })    
-  }
+    dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
+    router.push('/cart');
+  };
 
   return (
     <Layout title={product.name}>
@@ -58,9 +60,16 @@ const ProductScreen = () => {
             </div>
             <div className="mb-2 flex justify-between">
               <div>Statut</div>
-              <div>{product.countInStock > 0 ? 'En stock' : 'Sur commande'}</div>
+              <div>
+                {product.countInStock > 0 ? 'En stock' : 'Sur commande'}
+              </div>
             </div>
-            <button className="primary-button w-full" onClick={addToCartHandler}>Ajouter au panier</button>
+            <button
+              className="primary-button w-full"
+              onClick={addToCartHandler}
+            >
+              Ajouter au panier
+            </button>
           </div>
         </div>
       </div>
