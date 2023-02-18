@@ -12,7 +12,7 @@ const data = {
       countInStock: 10,
       algorithm: 'scrypt',
       description:
-        'Model Antminer L7 (9.05Gh) from Bitmain mining Scrypt algorithm with a maximum hashrate of 9.05Gh/s for a power consumption of 3425W.',
+        "Antminer L7 (9.05Gh) de Bitmain minant l'algorithme Scrypt avec un hashrate maximum de 9.05Gh/s pour une consommation de 3425W.",
     },
     {
       name: 'S19XP',
@@ -26,7 +26,7 @@ const data = {
       countInStock: 10,
       algorithm: 'SHA-256',
       description:
-        'Model Antminer S19 XP (141Th) from Bitmain mining SHA-256 algorithm with a maximum hashrate of 141Th/s for a power consumption of 3010W.',
+        "Antminer S19 XP (141Th) de Bitmain minant l'algorithme SHA-256 avec un hashrate maximum de 141Th/s pour une consommation de 3010W.",
     },
     {
       name: 'Whatsminer M50',
@@ -40,7 +40,7 @@ const data = {
       countInStock: 10,
       algorithm: 'SHA-256',
       description:
-        'Model Whatsminer M50 from MicroBT mining SHA-256 algorithm with a maximum hashrate of 118Th/s for a power consumption of 3306W.',
+        "Whatsminer M50 de MicroBT minant l'algorithme SHA-256 avec un hashrate maximum de 118Th/s pour une consommation de 3306W.",
     },
     {
       name: 'KA3',
@@ -54,7 +54,7 @@ const data = {
       countInStock: 10,
       algorithm: 'Kadena',
       description:
-        'Model Antminer KA3 (166Th) from Bitmain mining Kadena algorithm with a maximum hashrate of 166Th/s for a power consumption of 3154W.',
+        "Antminer KA3 (166Th) de Bitmain minant l'algorithme Kadena avec un hashrate maximum de 166Th/s pour une consommation de 3154W.",
     },
     {
       name: 'Z15',
@@ -68,7 +68,7 @@ const data = {
       countInStock: 10,
       algorithm: 'Equihash',
       description:
-        'Model Antminer Z15 from Bitmain mining Equihash algorithm with a maximum hashrate of 420ksol/s for a power consumption of 1510W.',
+        "Antminer Z15 de Bitmain minant l'algorithme Equihash avec un hashrate maximum de 420ksol/s pour une consommation de 1510W.",
     },
     {
       name: 'S19J Pro',
@@ -82,7 +82,7 @@ const data = {
       countInStock: 10,
       algorithm: 'SHA-256',
       description:
-        'Model Antminer S19j Pro (100Th) from Bitmain mining SHA-256 algorithm with a maximum hashrate of 100Th/s for a power consumption of 3050W.',
+        "Antminer S19j Pro (100Th) de Bitmain minant l'algorithme SHA-256 avec un hashrate maximum de 100Th/s pour une consommation de 3050W.",
     },
   ],
 };
