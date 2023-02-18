@@ -42,6 +42,11 @@ const ProductScreen = () => {
               <div>Prix</div>
               <div>$ {product.price}</div>
             </div>
+            <div className="mb-2 flex justify-between">
+              <div>Statut</div>
+              <div>{product.countInStock > 0 ? 'En stock' : 'Sur commande'}</div>
+            </div>
+            <button className="primary-button w-full">Ajouter au panier</button>
           </div>
         </div>
       </div>
