@@ -39,12 +39,12 @@ export default function LoginScreen() {
     }
   };
   return (
-    <Layout title="Login">
+    <Layout title="Connexion">
       <form
         className="mx-auto max-w-screen-md"
         onSubmit={handleSubmit(submitHandler)}
       >
-        <h1 className="mb-4 text-xl">Login</h1>
+        <h1 className="mb-4 text-xl">Se connecter</h1>
         <div className="mb-4">
           <label htmlFor="email">Email</label>
           <input
@@ -65,7 +65,7 @@ export default function LoginScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             type="password"
             {...register('password', {
@@ -81,11 +81,11 @@ export default function LoginScreen() {
           )}
         </div>
         <div className="mb-4 ">
-          <button className="primary-button">Login</button>
+          <button className="primary-button">Se connecter</button>
         </div>
         <div className="mb-4 ">
-          Don&apos;t have an account? &nbsp;
-          <Link href={`/register?redirect=${redirect || '/'}`}>Register</Link>
+          Vous n&apos;avez pas de compte ? &nbsp;
+          <Link href={`/register?redirect=${redirect || '/'}`}>Créer un compte </Link>
         </div>
       </form>
     </Layout>
