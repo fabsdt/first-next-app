@@ -4,7 +4,7 @@ import Cookie from 'js-cookie';
 export const Store = createContext();
 
 const initialState = {
-  cart: Cookie.get('cart') ? JSON.parse(Cookie.get('cart')) : { cartItems: [] },
+  cart: Cookie.get('cart') ? JSON.parse(Cookie.get('cart')) : { cartItems: [], shippingAddress: {} },
 };
 
 function reducer(state, action) {
@@ -32,10 +32,21 @@ function reducer(state, action) {
     case 'CART_RESET':
       return {
         ...state,
-        cart: { 
+        cart: {
           cartItems: [],
           shippingAddress: { location: {} },
           paymentMethod: '',
+        },
+      };
+    case 'SAVE_SHIPPING_ADDRESS':
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          shippingAddress: {
+            ...state.cart.shippingAddress,
+            ...action.payload,
+          },
         },
       };
     default:

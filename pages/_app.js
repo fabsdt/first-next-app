@@ -1,13 +1,37 @@
-import '@/styles/globals.css';
-import { SessionProvider } from 'next-auth/react';
-import { StoreProvider } from '@/utils/Store';
+import '../styles/globals.css';
+import { SessionProvider, useSession } from 'next-auth/react';
+import { StoreProvider } from '../utils/Store';
+import { useRouter } from 'next/router';
 
-export default function App({ Component, pageProps: { session, ...pageProps } }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
       <StoreProvider>
-        <Component {...pageProps} />
+        {Component.auth ? (
+          <Auth>
+            <Component {...pageProps} />
+          </Auth>
+        ) : (
+          <Component {...pageProps} />
+        )}
       </StoreProvider>
     </SessionProvider>
   );
 }
+
+function Auth({ children }) {
+  const router = useRouter();
+  const { status, data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      router.push('/unauthorized?message=connexion à un compte requise');
+    },
+  });
+  if (status === 'loading') {
+    return <div>Chargement...</div>;
+  }
+
+  return children;
+}
+
+export default MyApp;
