@@ -33,9 +33,9 @@ export default function Home({ products, featuredProducts }) {
         {featuredProducts.map((product) => (
           <div key={product._id}>
             <Link href={`/product/${product.slug}`} passHref>
-              <a className="flex">
-                <img src={product.banner} alt={product.name} />
-              </a>
+              <p className="flex">
+                <img src={product.image} alt={product.name} />
+              </p>
             </Link>
           </div>
         ))}
