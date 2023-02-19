@@ -16,7 +16,7 @@ function CartScreen() {
     cart: { cartItems },
   } = state;
   const removeItemHandler = (item) => {
-    dispatch({ type: 'REMOVE_FROM_CART', payload: item });
+    dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
   const updateCartHandler = async (item, qty) => {
     const quantity = Number(qty);
