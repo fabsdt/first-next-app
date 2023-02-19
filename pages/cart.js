@@ -1,28 +1,32 @@
-import Layout from '@/components/Layout';
-import { Store } from '@/utils/Store';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { XCircleIcon } from '@heroicons/react/outline';
+import Layout from '../components/Layout';
+import { Store } from '../utils/Store';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const CartScreen = () => {
+function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
     cart: { cartItems },
   } = state;
-
   const removeItemHandler = (item) => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: item });
   };
-
-  const updateCartHandler = (item, qty) => {
+  const updateCartHandler = async (item, qty) => {
     const quantity = Number(qty);
+    const { data } = await axios.get(`/api/products/${item._id}`);
+    if (data.countInStock < quantity) {
+      return toast.error('Désolé, cet article est en rupture de stock');
+    }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
+    toast.success('Panier mis à jour');
   };
-
   return (
     <Layout title="Panier d'achats">
       <h1 className="mb-4 text-xl">Panier d'achats</h1>
