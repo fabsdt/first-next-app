@@ -27,7 +27,7 @@ export default function ProductItem({ product, addToCartHandler }) {
           type="button"
           onClick={() => addToCartHandler(product)}
         >
-          Add to cart
+          Ajouter au panier
         </button>
       </div>
     </div>

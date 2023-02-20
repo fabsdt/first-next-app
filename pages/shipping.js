@@ -50,15 +50,15 @@ export default function ShippingScreen() {
   };
 
   return (
-    <Layout title="Shipping Address">
+    <Layout title="livraison">
       <CheckoutWizard activeStep={1} />
       <form
         className="mx-auto max-w-screen-md"
         onSubmit={handleSubmit(submitHandler)}
       >
-        <h1 className="mb-4 text-xl">Shipping Address</h1>
+        <h1 className="mb-4 text-xl">Adresse de livraison</h1>
         <div className="mb-4">
-          <label htmlFor="fullName">Full Name</label>
+          <label htmlFor="fullName">Nom et Prénom</label>
           <input
             className="w-full"
             id="fullName"
@@ -72,7 +72,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address">Adresse (numéro et rue)</label>
           <input
             className="w-full"
             id="address"
@@ -86,7 +86,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="city">City</label>
+          <label htmlFor="city">Ville</label>
           <input
             className="w-full"
             id="city"
@@ -99,7 +99,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="postalCode">Postal Code</label>
+          <label htmlFor="postalCode">Code Postal</label>
           <input
             className="w-full"
             id="postalCode"
@@ -112,7 +112,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="country">Country</label>
+          <label htmlFor="country">Pays</label>
           <input
             className="w-full"
             id="country"
@@ -125,7 +125,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4 flex justify-between">
-          <button className="primary-button">Next</button>
+          <button className="primary-button">Suivant</button>
         </div>
       </form>
     </Layout>
