@@ -14,7 +14,7 @@ export default function ProductScreen(props) {
   const { state, dispatch } = useContext(Store);
   const router = useRouter();
   if (!product) {
-    return <Layout title="Produt Not Found">Produt Not Found</Layout>;
+    return <Layout title="Article introuvable">Article introuvable</Layout>;
   }
 
   const addToCartHandler = async () => {
@@ -33,7 +33,7 @@ export default function ProductScreen(props) {
   return (
     <Layout title={product.name}>
       <div className="py-2">
-        <Link href="/">back to products</Link>
+        <Link href="/">Retour à notre sélection</Link>
       </div>
       <div className="grid md:grid-cols-4 md:gap-3">
         <div className="md:col-span-2">
@@ -41,7 +41,7 @@ export default function ProductScreen(props) {
             src={product.image}
             alt={product.name}
             width={640}
-            height={640}
+            height={500}
             layout="responsive"
           ></Image>
         </div>
@@ -50,11 +50,11 @@ export default function ProductScreen(props) {
             <li>
               <h1 className="text-lg">{product.name}</h1>
             </li>
-            <li>Category: {product.category}</li>
-            <li>Brand: {product.brand}</li>
+            <li>Algo: {product.algorithm}</li>
+            {/* <li>Brand: {product.brand}</li>
             <li>
               {product.rating} of {product.numReviews} reviews
-            </li>
+            </li> */}
             <li>Description: {product.description}</li>
           </ul>
         </div>
