@@ -38,8 +38,8 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + ' - Amazona' : 'Amazona'}</title>
-        <meta name="description" content="Ecommerce Website" />
+        <title>{title ? title + ' - AnalyaTech' : 'AnalyaTech'}</title>
+        <meta name="description" content="Miner Shop" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
