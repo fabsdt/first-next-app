@@ -50,29 +50,30 @@ export default function ProductScreen(props) {
             <li>
               <h1 className="text-lg">{product.name}</h1>
             </li>
-            <li>Algo: {product.algorithm}</li>
+            {/* <li>Algo: {product.algorithm}</li> */}
             {/* <li>Brand: {product.brand}</li>
             <li>
               {product.rating} of {product.numReviews} reviews
             </li> */}
-            <li>Description: {product.description}</li>
+            <br />
+            <li>{product.description}</li>
           </ul>
         </div>
         <div>
           <div className="card p-5">
             <div className="mb-2 flex justify-between">
-              <div>Price</div>
+              <div>Prix</div>
               <div>${product.price}</div>
             </div>
             <div className="mb-2 flex justify-between">
               <div>Status</div>
-              <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
+              <div>{product.countInStock > 0 ? 'Disponible' : 'Indisponible'}</div>
             </div>
             <button
               className="primary-button w-full"
               onClick={addToCartHandler}
             >
-              Add to cart
+              Ajouter au panier
             </button>
           </div>
         </div>

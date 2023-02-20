@@ -20,15 +20,15 @@ export default function Home({ products, featuredProducts }) {
     const { data } = await axios.get(`/api/products/${product._id}`);
 
     if (data.countInStock < quantity) {
-      return toast.error('Sorry. Product is out of stock');
+      return toast.error("Désole, cet article n'est plus disponible");
     }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
 
-    toast.success('Product added to the cart');
+    toast.success('Article ajouté au panier');
   };
 
   return (
-    <Layout title="Home Page">
+    <Layout title="Page d'accueil">
       <Carousel showThumbs={false} autoPlay>
         {featuredProducts.map((product) => (
           <div key={product._id}>
