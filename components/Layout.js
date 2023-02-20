@@ -59,14 +59,14 @@ export default function Layout({ title, children }) {
                 onChange={(e) => setQuery(e.target.value)}
                 type="text"
                 className="rounded-tr-none rounded-br-none p-1 text-sm   focus:ring-0"
-                placeholder="Search products"
+                placeholder="analyatech.fr"
               />
               <button
                 className="rounded rounded-tl-none rounded-bl-none bg-amber-300 p-1 text-sm dark:text-black"
                 type="submit"
                 id="button-addon2"
               >
-                <SearchIcon className="h-5 w-5"></SearchIcon>
+                <SearchIcon className="h-5 w-"></SearchIcon>
               </button>
             </form>
             <div>
@@ -91,7 +91,7 @@ export default function Layout({ title, children }) {
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
                     <Menu.Item>
                       <DropdownLink className="dropdown-link" href="/profile">
-                        Profile
+                        Profil
                       </DropdownLink>
                     </Menu.Item>
                     <Menu.Item>
@@ -99,7 +99,7 @@ export default function Layout({ title, children }) {
                         className="dropdown-link"
                         href="/order-history"
                       >
-                        Order History
+                        Commandes
                       </DropdownLink>
                     </Menu.Item>
                     {session.user.isAdmin && (
@@ -108,7 +108,7 @@ export default function Layout({ title, children }) {
                           className="dropdown-link"
                           href="/admin/dashboard"
                         >
-                          Admin Dashboard
+                          Panneau Admin
                         </DropdownLink>
                       </Menu.Item>
                     )}
@@ -118,14 +118,14 @@ export default function Layout({ title, children }) {
                         href="#"
                         onClick={logoutClickHandler}
                       >
-                        Logout
+                        Se déconnecter
                       </a>
                     </Menu.Item>
                   </Menu.Items>
                 </Menu>
               ) : (
                 <Link href="/login">
-                  <a className="p-2">Login</a>
+                  <a className="p-2">Se connecter</a>
                 </Link>
               )}
             </div>
@@ -133,7 +133,7 @@ export default function Layout({ title, children }) {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
-          <p>Copyright © 2022 Amazona</p>
+          <p>2023 AnalyaTech</p>
         </footer>
       </div>
     </>

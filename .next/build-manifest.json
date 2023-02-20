@@ -35,10 +35,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/cart.js"
     ],
-    "/login": [
+    "/profile": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/login.js"
+      "static/chunks/pages/profile.js"
     ]
   },
   "ampFirstPages": []
