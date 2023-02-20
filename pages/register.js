@@ -88,7 +88,7 @@ export default function LoginScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             type="password"
             {...register('password', {
@@ -104,7 +104,7 @@ export default function LoginScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="confirmPassword">Confirm Password</label>
+          <label htmlFor="confirmPassword">Confirmer Mot de passe</label>
           <input
             className="w-full"
             type="password"
@@ -125,16 +125,16 @@ export default function LoginScreen() {
           )}
           {errors.confirmPassword &&
             errors.confirmPassword.type === 'validate' && (
-              <div className="text-red-500 ">Password do not match</div>
+              <div className="text-red-500 ">Les mots de passe ne correspondent pas</div>
             )}
         </div>
 
         <div className="mb-4 ">
-          <button className="primary-button">Register</button>
+          <button className="primary-button">Créer un compte</button>
         </div>
         <div className="mb-4 ">
-          Don&apos;t have an account? &nbsp;
-          <Link href={`/register?redirect=${redirect || '/'}`}>Register</Link>
+          Vous avez déjà un compte ? &nbsp;
+          <Link href={`/login`}>Se connecter</Link>
         </div>
       </form>
     </Layout>
