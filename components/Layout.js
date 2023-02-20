@@ -125,7 +125,7 @@ export default function Layout({ title, children }) {
                 </Menu>
               ) : (
                 <Link href="/login">
-                  <a className="p-2">Se connecter</a>
+                  <a className="p-2">Connexion</a>
                 </Link>
               )}
             </div>
