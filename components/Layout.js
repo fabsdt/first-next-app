@@ -69,7 +69,7 @@ export default function Layout({ title, children }) {
                 <SearchIcon className="h-5 w-"></SearchIcon>
               </button>
             </form>
-            <div>
+            <div className='flex'>
               <Link href="/cart">
                 <a className="p-2">
                   Panier
@@ -84,8 +84,8 @@ export default function Layout({ title, children }) {
               {status === 'loading' ? (
                 'Loading'
               ) : session?.user ? (
-                <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text-blue-600">
+                <Menu as="div" className="relative flex">
+                  <Menu.Button className="text-blue-600 ">
                     {session.user.name}
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">

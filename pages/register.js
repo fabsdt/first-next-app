@@ -47,12 +47,12 @@ export default function LoginScreen() {
     }
   };
   return (
-    <Layout title="Create Account">
+    <Layout title="créer un compte">
       <form
         className="mx-auto max-w-screen-md"
         onSubmit={handleSubmit(submitHandler)}
       >
-        <h1 className="mb-4 text-xl">Create Account</h1>
+        <h1 className="mb-4 text-xl">Créer votre compte</h1>
         <div className="mb-4">
           <label htmlFor="name">Name</label>
           <input
