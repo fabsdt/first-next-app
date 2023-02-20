@@ -18,7 +18,7 @@ export default function PaymentScreen() {
   const submitHandler = (e) => {
     e.preventDefault();
     if (!selectedPaymentMethod) {
-      return toast.error('Un moyen de paiement est requis');
+      return toast.error('Payment method is required');
     }
     dispatch({ type: 'SAVE_PAYMENT_METHOD', payload: selectedPaymentMethod });
     Cookies.set(
@@ -39,11 +39,11 @@ export default function PaymentScreen() {
   }, [paymentMethod, router, shippingAddress.address]);
 
   return (
-    <Layout title="Moyen de paiement">
+    <Layout title="Payment Method">
       <CheckoutWizard activeStep={2} />
       <form className="mx-auto max-w-screen-md" onSubmit={submitHandler}>
-        <h1 className="mb-4 text-xl">Moyen de paiement</h1>
-        {['PayPal', 'Stripe', 'Cryptomonnaie'].map((payment) => (
+        <h1 className="mb-4 text-xl">Payment Method</h1>
+        {['PayPal', 'Stripe', 'CashOnDelivery'].map((payment) => (
           <div key={payment} className="mb-4">
             <input
               name="paymentMethod"
@@ -65,9 +65,9 @@ export default function PaymentScreen() {
             type="button"
             className="default-button"
           >
-            Retour
+            Back
           </button>
-          <button className="primary-button">Suivant</button>
+          <button className="primary-button">Next</button>
         </div>
       </form>
     </Layout>

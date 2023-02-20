@@ -22,28 +22,28 @@ function CartScreen() {
     const quantity = Number(qty);
     const { data } = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {
-      return toast.error('Désolé, cet article est en rupture de stock');
+      return toast.error('Sorry. Product is out of stock');
     }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
-    toast.success('Panier mis à jour');
+    toast.success('Product updated in the cart');
   };
   return (
-    <Layout title="Panier d'achats">
-      <h1 className="mb-4 text-xl">Panier d'achats</h1>
+    <Layout title="Shopping Cart">
+      <h1 className="mb-4 text-xl">Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <div>
-          Le panier est vide. <Link href="/">Continuer mes achats</Link>
+          Cart is empty. <Link href="/">Go shopping</Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
-            <table className="min-w-full">
+            <table className="min-w-full ">
               <thead className="border-b">
                 <tr>
-                  <th className="px-5 text-left">Article</th>
-                  <th className="p-5 text-right">Quantité</th>
-                  <th className="p-5 text-right">Prix</th>
-                  <th className="p-5">Retirer</th>
+                  <th className="p-5 text-left">Item</th>
+                  <th className="p-5 text-right">Quantity</th>
+                  <th className="p-5 text-right">Price</th>
+                  <th className="p-5">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,15 +51,16 @@ function CartScreen() {
                   <tr key={item.slug} className="border-b">
                     <td>
                       <Link href={`/product/${item.slug}`}>
-                        <p className="flex items-center">
+                        <a className="flex items-center">
                           <Image
                             src={item.image}
                             alt={item.name}
                             width={50}
                             height={50}
                           ></Image>
-                          &nbsp; {item.name}
-                        </p>
+                          &nbsp;
+                          {item.name}
+                        </a>
                       </Link>
                     </td>
                     <td className="p-5 text-right">
@@ -87,13 +88,12 @@ function CartScreen() {
               </tbody>
             </table>
           </div>
-
           <div className="card p-5">
             <ul>
               <li>
                 <div className="pb-3 text-xl">
-                  Sous Total ({cartItems.reduce((a, c) => a + c.quantity, 0)}) :
-                  ${cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
+                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                 </div>
               </li>
               <li>
@@ -101,7 +101,7 @@ function CartScreen() {
                   onClick={() => router.push('login?redirect=/shipping')}
                   className="primary-button w-full"
                 >
-                  Commander
+                  Check Out
                 </button>
               </li>
             </ul>
@@ -110,6 +110,6 @@ function CartScreen() {
       )}
     </Layout>
   );
-};
+}
 
 export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });

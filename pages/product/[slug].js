@@ -1,20 +1,20 @@
+import axios from 'axios';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
-import Layout from '../../components/Layout';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Store } from '../../utils/Store';
-import db from '@/utils/db';
-import Product from '@/models/Product';
-import axios from 'axios';
 import { toast } from 'react-toastify';
+import Layout from '../../components/Layout';
+import Product from '../../models/Product';
+import db from '../../utils/db';
+import { Store } from '../../utils/Store';
 
-const ProductScreen = (props) => {
+export default function ProductScreen(props) {
   const { product } = props;
   const { state, dispatch } = useContext(Store);
   const router = useRouter();
   if (!product) {
-    return <Layout title='article introuvable'>Article introuvable</Layout>;
+    return <Layout title="Produt Not Found">Produt Not Found</Layout>;
   }
 
   const addToCartHandler = async () => {
@@ -22,8 +22,8 @@ const ProductScreen = (props) => {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
 
-    if (product.countInStock < quantity) {     
-      return toast.error('Désolé, cet article est en rupture de stock')
+    if (data.countInStock < quantity) {
+      return toast.error('Sorry. Product is out of stock');
     }
 
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
@@ -33,7 +33,7 @@ const ProductScreen = (props) => {
   return (
     <Layout title={product.name}>
       <div className="py-2">
-        <Link href="/">Retour aux articles</Link>
+        <Link href="/">back to products</Link>
       </div>
       <div className="grid md:grid-cols-4 md:gap-3">
         <div className="md:col-span-2">
@@ -50,35 +50,36 @@ const ProductScreen = (props) => {
             <li>
               <h1 className="text-lg">{product.name}</h1>
             </li>
-            <li>Description : {product.description}</li>
+            <li>Category: {product.category}</li>
+            <li>Brand: {product.brand}</li>
+            <li>
+              {product.rating} of {product.numReviews} reviews
+            </li>
+            <li>Description: {product.description}</li>
           </ul>
         </div>
         <div>
           <div className="card p-5">
             <div className="mb-2 flex justify-between">
-              <div>Prix</div>
-              <div>$ {product.price}</div>
+              <div>Price</div>
+              <div>${product.price}</div>
             </div>
             <div className="mb-2 flex justify-between">
-              <div>Statut</div>
-              <div>
-                {product.countInStock > 0 ? 'En stock' : 'Sur commande'}
-              </div>
+              <div>Status</div>
+              <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
             </div>
             <button
               className="primary-button w-full"
               onClick={addToCartHandler}
             >
-              Ajouter au panier
+              Add to cart
             </button>
           </div>
         </div>
       </div>
     </Layout>
   );
-};
-
-export default ProductScreen;
+}
 
 export async function getServerSideProps(context) {
   const { params } = context;

@@ -37,7 +37,7 @@ export default function PlaceOrderScreen() {
   const placeOrderHandler = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.post('/api/orders', {        
+      const { data } = await axios.post('/api/orders', {
         orderItems: cartItems,
         shippingAddress,
         paymentMethod,
@@ -46,7 +46,6 @@ export default function PlaceOrderScreen() {
         taxPrice,
         totalPrice,
       });
-      
       setLoading(false);
       dispatch({ type: 'CART_CLEAR_ITEMS' });
       Cookies.set(
@@ -56,53 +55,51 @@ export default function PlaceOrderScreen() {
           cartItems: [],
         })
       );
-      
       router.push(`/order/${data._id}`);
     } catch (err) {
       setLoading(false);
       toast.error(getError(err));
-      
     }
   };
 
   return (
     <Layout title="Place Order">
       <CheckoutWizard activeStep={3} />
-      <h1 className="mb-4 text-xl">Passer commande</h1>
+      <h1 className="mb-4 text-xl">Place Order</h1>
       {cartItems.length === 0 ? (
         <div>
-          Panier vide <Link href="/">Continuez vos achats</Link>
+          Cart is empty. <Link href="/">Go shopping</Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
             <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Adresse de livraison</h2>
+              <h2 className="mb-2 text-lg">Shipping Address</h2>
               <div>
                 {shippingAddress.fullName}, {shippingAddress.address},{' '}
                 {shippingAddress.city}, {shippingAddress.postalCode},{' '}
                 {shippingAddress.country}
               </div>
               <div>
-                <Link href="/shipping">Modifier</Link>
+                <Link href="/shipping">Edit</Link>
               </div>
             </div>
             <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Moyen de paiement</h2>
+              <h2 className="mb-2 text-lg">Payment Method</h2>
               <div>{paymentMethod}</div>
               <div>
-                <Link href="/payment">Modifier</Link>
+                <Link href="/payment">Edit</Link>
               </div>
             </div>
             <div className="card overflow-x-auto p-5">
-              <h2 className="mb-2 text-lg">Commande</h2>
+              <h2 className="mb-2 text-lg">Order Items</h2>
               <table className="min-w-full">
                 <thead className="border-b">
                   <tr>
-                    <th className="px-5 text-left">Article</th>
-                    <th className="    p-5 text-right">Quantité</th>
-                    <th className="  p-5 text-right">Prix</th>
-                    <th className="p-5 text-right">Sous total</th>
+                    <th className="px-5 text-left">Item</th>
+                    <th className="    p-5 text-right">Quantity</th>
+                    <th className="  p-5 text-right">Price</th>
+                    <th className="p-5 text-right">Subtotal</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -110,7 +107,7 @@ export default function PlaceOrderScreen() {
                     <tr key={item._id} className="border-b">
                       <td>
                         <Link href={`/product/${item.slug}`}>
-                          <p className="flex items-center">
+                          <a className="flex items-center">
                             <Image
                               src={item.image}
                               alt={item.name}
@@ -119,7 +116,7 @@ export default function PlaceOrderScreen() {
                             ></Image>
                             &nbsp;
                             {item.name}
-                          </p>
+                          </a>
                         </Link>
                       </td>
                       <td className=" p-5 text-right">{item.quantity}</td>
@@ -132,29 +129,29 @@ export default function PlaceOrderScreen() {
                 </tbody>
               </table>
               <div>
-                <Link href="/cart">Modifier</Link>
+                <Link href="/cart">Edit</Link>
               </div>
             </div>
           </div>
           <div>
             <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Résumé de la commande</h2>
+              <h2 className="mb-2 text-lg">Order Summary</h2>
               <ul>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Article</div>
+                    <div>Items</div>
                     <div>${itemsPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Taxe</div>
+                    <div>Tax</div>
                     <div>${taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Livraison</div>
+                    <div>Shipping</div>
                     <div>${shippingPrice}</div>
                   </div>
                 </li>

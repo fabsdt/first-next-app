@@ -20,27 +20,27 @@ export default function Home({ products, featuredProducts }) {
     const { data } = await axios.get(`/api/products/${product._id}`);
 
     if (data.countInStock < quantity) {
-      return toast.error('Désolé, cet article est en rupture de stock');
+      return toast.error('Sorry. Product is out of stock');
     }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
 
-    toast.success('Article ajouté au panier');
+    toast.success('Product added to the cart');
   };
 
   return (
-    <Layout title="Accueil">
+    <Layout title="Home Page">
       <Carousel showThumbs={false} autoPlay>
         {featuredProducts.map((product) => (
           <div key={product._id}>
             <Link href={`/product/${product.slug}`} passHref>
-              <p className="flex">
-                <img src={product.image} alt={product.name} />
-              </p>
+              <a className="flex">
+                <img src={product.banner} alt={product.name} />
+              </a>
             </Link>
           </div>
         ))}
       </Carousel>
-      <h2 className="h2 my-4">Derniers articles</h2>
+      <h2 className="h2 my-4">Latest Products</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <ProductItem
