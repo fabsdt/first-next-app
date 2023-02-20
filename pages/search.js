@@ -13,16 +13,16 @@ const PAGE_SIZE = 2;
 
 const prices = [
   {
-    name: '$1 to $50',
-    value: '1-50',
+    name: '$1 to $5000',
+    value: '1-5000',
   },
   {
-    name: '$51 to $200',
-    value: '51-200',
+    name: '$5000 to $10000',
+    value: '5000-10000',
   },
   {
-    name: '$201 to $1000',
-    value: '201-1000',
+    name: '$10000 to $20000',
+    value: '10000-20000',
   },
 ];
 
@@ -36,12 +36,11 @@ export default function Search(props) {
     category = 'all',
     brand = 'all',
     price = 'all',
-    rating = 'all',
     sort = 'featured',
     page = 1,
   } = router.query;
 
-  const { products, countProducts, categories, brands, pages } = props;
+  const { products, countProducts, categories, pages } = props;
 
   const filterSearch = ({
     page,
@@ -76,17 +75,11 @@ export default function Search(props) {
   const pageHandler = (page) => {
     filterSearch({ page });
   };
-  const brandHandler = (e) => {
-    filterSearch({ brand: e.target.value });
-  };
   const sortHandler = (e) => {
     filterSearch({ sort: e.target.value });
   };
   const priceHandler = (e) => {
     filterSearch({ price: e.target.value });
-  };
-  const ratingHandler = (e) => {
-    filterSearch({ rating: e.target.value });
   };
 
   const { state, dispatch } = useContext(Store);
@@ -101,6 +94,7 @@ export default function Search(props) {
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
     router.push('/cart');
   };
+
   return (
     <Layout title="search">
       <div className="grid md:grid-cols-4 md:gap-5">
@@ -112,31 +106,21 @@ export default function Search(props) {
               value={category}
               onChange={categoryHandler}
             >
-              <option value="all">All</option>
+              <option value="all">Tous</option>
               {categories &&
                 categories.map((category) => (
                   <option key={category} value={category}>
                     {category}
                   </option>
+                  
                 ))}
+                <option>GPU (à venir)</option>
             </select>
           </div>
           <div className="mb-3">
-            <h2>Brands</h2>
-            <select className="w-full" value={brand} onChange={brandHandler}>
-              <option value="all">All</option>
-              {brands &&
-                brands.map((brand) => (
-                  <option key={brand} value={brand}>
-                    {brand}
-                  </option>
-                ))}
-            </select>
-          </div>
-          <div className="mb-3">
-            <h2>Prices</h2>
+            <h2>Prix</h2>
             <select className="w-full" value={price} onChange={priceHandler}>
-              <option value="all">All</option>
+              <option value="all">Tous</option>
               {prices &&
                 prices.map((price) => (
                   <option key={price.value} value={price.value}>
@@ -145,33 +129,19 @@ export default function Search(props) {
                 ))}
             </select>
           </div>
-          <div className="mb-3">
-            <h2>Ratings</h2>
-            <select className="w-full" value={rating} onChange={ratingHandler}>
-              <option value="all">All</option>
-              {ratings &&
-                ratings.map((rating) => (
-                  <option key={rating} value={rating}>
-                    {rating} star{rating > 1 && 's'} & up
-                  </option>
-                ))}
-            </select>
-          </div>
         </div>
         <div className="md:col-span-3">
           <div className="mb-2 flex items-center justify-between border-b-2 pb-2">
             <div className="flex items-center">
-              {products.length === 0 ? 'No' : countProducts} Results
+              {products.length === 0 ? 'No' : countProducts} Resultat(s)
               {query !== 'all' && query !== '' && ' : ' + query}
               {category !== 'all' && ' : ' + category}
               {brand !== 'all' && ' : ' + brand}
               {price !== 'all' && ' : Price ' + price}
-              {rating !== 'all' && ' : Rating ' + rating + ' & up'}
               &nbsp;
               {(query !== 'all' && query !== '') ||
               category !== 'all' ||
               brand !== 'all' ||
-              rating !== 'all' ||
               price !== 'all' ? (
                 <button onClick={() => router.push('/search')}>
                   <XCircleIcon className="h-5 w-5" />
@@ -179,13 +149,10 @@ export default function Search(props) {
               ) : null}
             </div>
             <div>
-              Sort by{' '}
-              <select value={sort} onChange={sortHandler}>
-                <option value="featured">Featured</option>
-                <option value="lowest">Price: Low to High</option>
-                <option value="highest">Price: High to Low</option>
-                <option value="toprated">Customer Reviews</option>
-                <option value="newest">Newest Arrivals</option>
+              Trier par {' '}
+              <select value={sort} onChange={sortHandler}>                
+                <option value="highest">Du plus cher au moins cher</option>
+                <option value="lowest">Du moins cher au plus cher</option>
               </select>
             </div>
           </div>

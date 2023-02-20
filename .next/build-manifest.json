@@ -35,10 +35,35 @@
       "static/chunks/main.js",
       "static/chunks/pages/cart.js"
     ],
-    "/search": [
+    "/login": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/search.js"
+      "static/chunks/pages/login.js"
+    ],
+    "/order/[id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/order/[id].js"
+    ],
+    "/payment": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/payment.js"
+    ],
+    "/placeorder": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/placeorder.js"
+    ],
+    "/product/[slug]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/product/[slug].js"
+    ],
+    "/shipping": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/shipping.js"
     ]
   },
   "ampFirstPages": []
