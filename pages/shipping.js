@@ -86,19 +86,6 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="city">Ville</label>
-          <input
-            className="w-full"
-            id="city"
-            {...register('city', {
-              required: 'Please enter city',
-            })}
-          />
-          {errors.city && (
-            <div className="text-red-500 ">{errors.city.message}</div>
-          )}
-        </div>
-        <div className="mb-4">
           <label htmlFor="postalCode">Code Postal</label>
           <input
             className="w-full"
@@ -109,6 +96,19 @@ export default function ShippingScreen() {
           />
           {errors.postalCode && (
             <div className="text-red-500 ">{errors.postalCode.message}</div>
+          )}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="city">Ville</label>
+          <input
+            className="w-full"
+            id="city"
+            {...register('city', {
+              required: 'Please enter city',
+            })}
+          />
+          {errors.city && (
+            <div className="text-red-500 ">{errors.city.message}</div>
           )}
         </div>
         <div className="mb-4">
