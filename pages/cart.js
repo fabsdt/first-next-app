@@ -32,7 +32,7 @@ function CartScreen() {
       <h1 className="mb-4 text-xl">Votre Panier</h1>
       {cartItems.length === 0 ? (
         <div>
-          Cart is empty. <Link href="/">Go shopping</Link>
+          Vous n'avez pas d'articles dans votre panier. <Link href="/">Continuer vos achats</Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
