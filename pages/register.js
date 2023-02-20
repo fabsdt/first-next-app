@@ -47,14 +47,14 @@ export default function LoginScreen() {
     }
   };
   return (
-    <Layout title="créer un compte">
+    <Layout title="Créer un compte">
       <form
         className="mx-auto max-w-screen-md"
         onSubmit={handleSubmit(submitHandler)}
       >
         <h1 className="mb-4 text-xl">Créer votre compte</h1>
         <div className="mb-4">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Nom d'utilisateur</label>
           <input
             type="text"
             className="w-full"
@@ -70,7 +70,7 @@ export default function LoginScreen() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Adresse email</label>
           <input
             type="email"
             {...register('email', {
@@ -88,7 +88,7 @@ export default function LoginScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="password">Mot de passe</label>
+          <label htmlFor="password">Entrer un mot de passe</label>
           <input
             type="password"
             {...register('password', {
@@ -104,7 +104,7 @@ export default function LoginScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="confirmPassword">Confirmer Mot de passe</label>
+          <label htmlFor="confirmPassword">Confirmer votre mot de passe</label>
           <input
             className="w-full"
             type="password"
