@@ -34,11 +34,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/placeorder.js"
-    ],
-    "/shipping": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/shipping.js"
     ]
   },
   "ampFirstPages": []
