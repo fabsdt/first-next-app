@@ -89,7 +89,7 @@ export default function Layout({ title, children }) {
              
 
               {status === 'loading' ? (
-                'Loading'
+                'Chargement'
               ) : session?.user ? (
                 <Menu as="div" className="relative flex">
                   <Menu.Button className="text-blue-600 ">
