@@ -36,10 +36,10 @@ function OrderHistoryScreen() {
     fetchOrders();
   }, []);
   return (
-    <Layout title="Order History">
-      <h1 className="mb-4 text-xl">Order History</h1>
+    <Layout title="Historique des commandes">
+      <h1 className="mb-4 text-xl">Historique des commandes</h1>
       {loading ? (
-        <div>Loading...</div>
+        <div>Chargement...</div>
       ) : error ? (
         <div className="alert-error">{error}</div>
       ) : (
@@ -47,12 +47,12 @@ function OrderHistoryScreen() {
           <table className="min-w-full">
             <thead className="border-b">
               <tr>
-                <th className="px-5 text-left">ID</th>
-                <th className="p-5 text-left">DATE</th>
-                <th className="p-5 text-left">TOTAL</th>
-                <th className="p-5 text-left">PAID</th>
-                <th className="p-5 text-left">DELIVERED</th>
-                <th className="p-5 text-left">ACTION</th>
+                <th className="px-5 text-left">id</th>
+                <th className="p-5 text-left">date</th>
+                <th className="p-5 text-left">total</th>
+                <th className="p-5 text-left">payé</th>
+                <th className="p-5 text-left">livré</th>
+                <th className="p-5 text-left">action</th>
               </tr>
             </thead>
             <tbody>
@@ -73,7 +73,7 @@ function OrderHistoryScreen() {
                   </td>
                   <td className=" p-5 ">
                     <Link href={`/order/${order._id}`} passHref>
-                      <a>Details</a>
+                      <a>détails</a>
                     </Link>
                   </td>
                 </tr>
