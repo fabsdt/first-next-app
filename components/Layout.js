@@ -10,7 +10,6 @@ import { Store } from '../utils/Store';
 import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import { SearchIcon } from '@heroicons/react/outline';
-import logo1 from "../public/logo-complet.png"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
@@ -43,17 +42,17 @@ export default function Layout({ title, children }) {
       <Head>
         <title>{title ? title + ' - AnalyaTech' : 'AnalyaTech'}</title>
         <meta name="description" content="Miner Shop" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       <ToastContainer position="bottom-center" limit={1} />
 
-      <div className="flex min-h-screen flex-col justify-between ">
+      <div className="flex min-h-screen flex-col justify-between ">      
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
             <Link href="/">
               <a className="text-lg font-bold">
-                <img src={logo1} alt="logo" />
+                <img src="/logo-complet.png" alt="logo" className='h-6 w-10/15'/>
               </a>
 
             </Link>
