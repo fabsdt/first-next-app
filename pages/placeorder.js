@@ -63,7 +63,7 @@ export default function PlaceOrderScreen() {
   };
 
   return (
-    <Layout title="Place Order">
+    <Layout title="Commander">
       <CheckoutWizard activeStep={3} />
       <h1 className="mb-4 text-xl">Passer la commande</h1>
       {cartItems.length === 0 ? (

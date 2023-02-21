@@ -96,11 +96,11 @@ export default function Search(props) {
   };
 
   return (
-    <Layout title="search">
+    <Layout title="recherche">
       <div className="grid md:grid-cols-4 md:gap-5">
         <div>
           <div className="my-3">
-            <h2>Categories</h2>
+            <h2>Catégories</h2>
             <select
               className="w-full"
               value={category}
