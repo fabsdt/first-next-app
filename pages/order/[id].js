@@ -179,38 +179,38 @@ function OrderScreen() {
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
             <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Shipping Address</h2>
+              <h2 className="mb-2 text-lg">Adresse de livraison</h2>
               <div>
                 {shippingAddress.fullName}, {shippingAddress.address},{' '}
                 {shippingAddress.city}, {shippingAddress.postalCode},{' '}
                 {shippingAddress.country}
               </div>
               {isDelivered ? (
-                <div className="alert-success">Delivered at {deliveredAt}</div>
+                <div className="alert-success">Livré à {deliveredAt}</div>
               ) : (
-                <div className="alert-error">Not delivered</div>
+                <div className="alert-error">Non livré</div>
               )}
             </div>
 
             <div className="card p-5">
-              <h2 className="mb-2 text-lg">Payment Method</h2>
+              <h2 className="mb-2 text-lg">Mode de paiement</h2>
               <div>{paymentMethod}</div>
               {isPaid ? (
-                <div className="alert-success">Paid at {paidAt}</div>
+                <div className="alert-success">Payé à {paidAt}</div>
               ) : (
-                <div className="alert-error">Not paid</div>
+                <div className="alert-error">Non payé</div>
               )}
             </div>
 
             <div className="card overflow-x-auto p-5">
-              <h2 className="mb-2 text-lg">Order Items</h2>
+              <h2 className="mb-2 text-lg">Commande</h2>
               <table className="min-w-full">
                 <thead className="border-b">
                   <tr>
-                    <th className="px-5 text-left">Item</th>
-                    <th className="    p-5 text-right">Quantity</th>
-                    <th className="  p-5 text-right">Price</th>
-                    <th className="p-5 text-right">Subtotal</th>
+                    <th className="px-5 text-left">Article(s)</th>
+                    <th className="    p-5 text-right">Quantité</th>
+                    <th className="  p-5 text-right">Prix</th>
+                    <th className="p-5 text-right">Sous total</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -243,23 +243,23 @@ function OrderScreen() {
           </div>
           <div>
             <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Order Summary</h2>
+              <h2 className="mb-2 text-lg">Résumé de la commande</h2>
               <ul>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Items</div>
+                    <div>Article(s)</div>
                     <div>${itemsPrice}</div>
                   </div>
                 </li>{' '}
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Tax</div>
+                    <div>Taxe</div>
                     <div>${taxPrice}</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Shipping</div>
+                    <div>Expédition</div>
                     <div>${shippingPrice}</div>
                   </div>
                 </li>
@@ -282,17 +282,17 @@ function OrderScreen() {
                         ></PayPalButtons>
                       </div>
                     )}
-                    {loadingPay && <div>Loading...</div>}
+                    {loadingPay && <div>Chargement...</div>}
                   </li>
                 )}
                 {session.user.isAdmin && order.isPaid && !order.isDelivered && (
                   <li>
-                    {loadingDeliver && <div>Loading...</div>}
+                    {loadingDeliver && <div>Chargement...</div>}
                     <button
                       className="primary-button w-full"
                       onClick={deliverOrderHandler}
                     >
-                      Deliver Order
+                      Livraison de la commande
                     </button>
                   </li>
                 )}

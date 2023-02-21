@@ -32,7 +32,8 @@ function CartScreen() {
       <h1 className="mb-4 text-xl">Votre Panier</h1>
       {cartItems.length === 0 ? (
         <div>
-          Vous n'avez pas d'articles dans votre panier. <Link href="/">Continuer vos achats</Link>
+          Vous n'avez pas d'articles dans votre panier.{' '}
+          <Link href="/">Continuer vos achats</Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
@@ -92,8 +93,8 @@ function CartScreen() {
             <ul>
               <li>
                 <div className="pb-3 text-xl">
-                  Sous total ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
-                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                  Sous total ({cartItems.reduce((a, c) => a + c.quantity, 0)}) :
+                  ${cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
                 </div>
               </li>
               <li>

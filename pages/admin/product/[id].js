@@ -139,24 +139,24 @@ export default function AdminProductEditScreen() {
         <div>
           <ul>
             <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
+              <Link href="/admin/dashboard">Tableau de bord</Link>
             </li>
             <li>
-              <Link href="/admin/orders">Orders</Link>
+              <Link href="/admin/orders">Commande</Link>
             </li>
             <li>
               <Link href="/admin/products">
-                <a className="font-bold">Products</a>
+                <a className="font-bold">Article(s)</a>
               </Link>
             </li>
             <li>
-              <Link href="/admin/users">Users</Link>
+              <Link href="/admin/users">Utilisateur(s)</Link>
             </li>
           </ul>
         </div>
         <div className="md:col-span-3">
           {loading ? (
-            <div>Loading...</div>
+            <div>Chargement...</div>
           ) : error ? (
             <div className="alert-error">{error}</div>
           ) : (
@@ -166,7 +166,7 @@ export default function AdminProductEditScreen() {
             >
               <h1 className="mb-4 text-xl">{`Edit Product ${productId}`}</h1>
               <div className="mb-4">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Nom</label>
                 <input
                   type="text"
                   className="w-full"
@@ -181,7 +181,7 @@ export default function AdminProductEditScreen() {
                 )}
               </div>
               <div className="mb-4">
-                <label htmlFor="slug">Slug</label>
+                <label htmlFor="slug">slug</label>
                 <input
                   type="text"
                   className="w-full"
@@ -195,7 +195,7 @@ export default function AdminProductEditScreen() {
                 )}
               </div>
               <div className="mb-4">
-                <label htmlFor="price">Price</label>
+                <label htmlFor="price">Prix</label>
                 <input
                   type="text"
                   className="w-full"
@@ -223,7 +223,7 @@ export default function AdminProductEditScreen() {
                 )}
               </div>
               <div className="mb-4">
-                <label htmlFor="imageFile">Upload image</label>
+                <label htmlFor="imageFile">Télécharger image</label>
                 <input
                   type="file"
                   className="w-full"
@@ -231,10 +231,10 @@ export default function AdminProductEditScreen() {
                   onChange={uploadHandler}
                 />
 
-                {loadingUpload && <div>Uploading....</div>}
+                {loadingUpload && <div>Téléchargement de....</div>}
               </div>
               <div className="mb-4">
-                <label htmlFor="category">category</label>
+                <label htmlFor="category">catégorie</label>
                 <input
                   type="text"
                   className="w-full"
@@ -248,7 +248,7 @@ export default function AdminProductEditScreen() {
                 )}
               </div>
               <div className="mb-4">
-                <label htmlFor="brand">brand</label>
+                <label htmlFor="brand">marque</label>
                 <input
                   type="text"
                   className="w-full"
@@ -299,7 +299,7 @@ export default function AdminProductEditScreen() {
                 </button>
               </div>
               <div className="mb-4">
-                <Link href={`/admin/products`}>Back</Link>
+                <Link href={`/admin/products`}>Retour</Link>
               </div>
             </form>
           )}

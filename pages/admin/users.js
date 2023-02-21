@@ -73,26 +73,26 @@ function AdminUsersScreen() {
         <div>
           <ul>
             <li>
-              <Link href="/admin/dashboard">Dashboard</Link>
+              <Link href="/admin/dashboard">Tableau de bord</Link>
             </li>
             <li>
-              <Link href="/admin/orders">Orders</Link>
+              <Link href="/admin/orders">Commandes</Link>
             </li>
             <li>
-              <Link href="/admin/products">Products</Link>
+              <Link href="/admin/products">Article(s)</Link>
             </li>
             <li>
               <Link href="/admin/users">
-                <a className="font-bold">Users</a>
+                <a className="font-bold">Utilisateur(s)</a>
               </Link>
             </li>
           </ul>
         </div>
         <div className="overflow-x-auto md:col-span-3">
-          <h1 className="mb-4 text-xl">Users</h1>
-          {loadingDelete && <div>Deleting...</div>}
+          <h1 className="mb-4 text-xl">Utilisateurs</h1>
+          {loadingDelete && <div>Suppression de...</div>}
           {loading ? (
-            <div>Loading...</div>
+            <div>Chargement...</div>
           ) : error ? (
             <div className="alert-error">{error}</div>
           ) : (
@@ -100,11 +100,11 @@ function AdminUsersScreen() {
               <table className="min-w-full">
                 <thead className="border-b">
                   <tr>
-                    <th className="px-5 text-left">ID</th>
-                    <th className="p-5 text-left">NAME</th>
-                    <th className="p-5 text-left">EMAIL</th>
-                    <th className="p-5 text-left">ADMIN</th>
-                    <th className="p-5 text-left">ACTIONS</th>
+                    <th className="px-5 text-left">id</th>
+                    <th className="p-5 text-left">name</th>
+                    <th className="p-5 text-left">email</th>
+                    <th className="p-5 text-left">admin</th>
+                    <th className="p-5 text-left">actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -117,7 +117,7 @@ function AdminUsersScreen() {
                       <td className=" p-5 ">
                         <Link href={`/admin/user/${user._id}`} passHref>
                           <a type="button" className="default-button">
-                            Edit
+                            Modifier
                           </a>
                         </Link>
                         &nbsp;
@@ -126,7 +126,7 @@ function AdminUsersScreen() {
                           className="default-button"
                           onClick={() => deleteHandler(user._id)}
                         >
-                          Delete
+                          Supprimer
                         </button>
                       </td>
                     </tr>

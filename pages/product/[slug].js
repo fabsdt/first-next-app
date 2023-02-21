@@ -66,7 +66,7 @@ export default function ProductScreen(props) {
               <div>${product.price}</div>
             </div>
             <div className="mb-2 flex justify-between">
-              <div>Status</div>
+              <div>Statut</div>
               <div>{product.countInStock > 0 ? 'Disponible' : 'Indisponible'}</div>
             </div>
             <button
