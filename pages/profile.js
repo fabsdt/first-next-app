@@ -29,12 +29,12 @@ export default function ProfileScreen() {
         email,
         password,
       });
-      const result = await signIn('credentials', {
+      const result = await signIn('Références', {
         redirect: false,
         email,
         password,
       });
-      toast.success('Profile updated successfully');
+      toast.success('Profil mis à jour avec succès');
       if (result.error) {
         toast.error(result.error);
       }
@@ -44,15 +44,15 @@ export default function ProfileScreen() {
   };
 
   return (
-    <Layout title="Profile">
+    <Layout title="Profil">
       <form
         className="mx-auto max-w-screen-md"
         onSubmit={handleSubmit(submitHandler)}
       >
-        <h1 className="mb-4 text-xl">Update Profile</h1>
+        <h1 className="mb-4 text-xl">Mise à jour du profil</h1>
 
         <div className="mb-4">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Nom d'utilisateur</label>
           <input
             type="text"
             className="w-full"
@@ -77,7 +77,7 @@ export default function ProfileScreen() {
               required: 'Please enter email',
               pattern: {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
-                message: 'Please enter valid email',
+                message: 'Entrer un email valide',
               },
             })}
           />
@@ -87,7 +87,7 @@ export default function ProfileScreen() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             className="w-full"
             type="password"
@@ -102,7 +102,7 @@ export default function ProfileScreen() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="confirmPassword">Confirm Password</label>
+          <label htmlFor="confirmPassword">Confirmer votre mot de passe</label>
           <input
             className="w-full"
             type="password"
@@ -122,11 +122,11 @@ export default function ProfileScreen() {
           )}
           {errors.confirmPassword &&
             errors.confirmPassword.type === 'validate' && (
-              <div className="text-red-500 ">Password do not match</div>
+              <div className="text-red-500 ">Le mot de passe ne correspond pas</div>
             )}
         </div>
         <div className="mb-4">
-          <button className="primary-button">Update Profile</button>
+          <button className="primary-button">Mise à jour du profil</button>
         </div>
       </form>
     </Layout>
