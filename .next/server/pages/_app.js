@@ -1,116 +1,111 @@
-"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 (() => {
 var exports = {};
-exports.id = 2888;
-exports.ids = [2888];
+exports.id = "pages/_app";
+exports.ids = ["pages/_app"];
 exports.modules = {
 
-/***/ 8484:
+/***/ "./pages/_app.js":
+/*!***********************!*\
+  !*** ./pages/_app.js ***!
+  \***********************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1649);
-/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_auth_react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_Store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2148);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1853);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2929);
-/* harmony import */ var _paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_4__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_utils_Store__WEBPACK_IMPORTED_MODULE_2__]);
-_utils_Store__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-
-
-
-
-
-
-function MyApp({ Component , pageProps: { session , ...pageProps }  }) {
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_auth_react__WEBPACK_IMPORTED_MODULE_1__.SessionProvider, {
-        session: session,
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_utils_Store__WEBPACK_IMPORTED_MODULE_2__/* .StoreProvider */ .g, {
-            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_4__.PayPalScriptProvider, {
-                deferLoading: true,
-                children: Component.auth ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Auth, {
-                    adminOnly: Component.auth.adminOnly,
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
-                        ...pageProps
-                    })
-                }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
-                    ...pageProps
-                })
-            })
-        })
-    });
-}
-function Auth({ children , adminOnly  }) {
-    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
-    const { status , data: session  } = (0,next_auth_react__WEBPACK_IMPORTED_MODULE_1__.useSession)({
-        required: true,
-        onUnauthenticated () {
-            router.push("/unauthorized?message=login required");
-        }
-    });
-    if (status === "loading") {
-        return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-            children: "Chargement..."
-        });
-    }
-    if (adminOnly && !session.user.isAdmin) {
-        router.push("/unauthorized?message=admin login required");
-    }
-    return children;
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);
-
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
+"use strict";
+eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/globals.css */ \"./styles/globals.css\");\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_globals_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-auth/react */ \"next-auth/react\");\n/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_auth_react__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _utils_Store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/Store */ \"./utils/Store.js\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ \"next/router\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @paypal/react-paypal-js */ \"@paypal/react-paypal-js\");\n/* harmony import */ var _paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_5__);\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_utils_Store__WEBPACK_IMPORTED_MODULE_3__]);\n_utils_Store__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\n\n\n\n\nfunction MyApp({ Component , pageProps: { session , ...pageProps }  }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(next_auth_react__WEBPACK_IMPORTED_MODULE_2__.SessionProvider, {\n        session: session,\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_utils_Store__WEBPACK_IMPORTED_MODULE_3__.StoreProvider, {\n            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_paypal_react_paypal_js__WEBPACK_IMPORTED_MODULE_5__.PayPalScriptProvider, {\n                deferLoading: true,\n                children: Component.auth ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Auth, {\n                    adminOnly: Component.auth.adminOnly,\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n                        ...pageProps\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\sdtva\\\\Desktop\\\\next-tailwind-ecom\\\\first-next-app\\\\pages\\\\_app.js\",\n                        lineNumber: 14,\n                        columnNumber: 15\n                    }, this)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\sdtva\\\\Desktop\\\\next-tailwind-ecom\\\\first-next-app\\\\pages\\\\_app.js\",\n                    lineNumber: 13,\n                    columnNumber: 13\n                }, this) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n                    ...pageProps\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\sdtva\\\\Desktop\\\\next-tailwind-ecom\\\\first-next-app\\\\pages\\\\_app.js\",\n                    lineNumber: 17,\n                    columnNumber: 13\n                }, this)\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\sdtva\\\\Desktop\\\\next-tailwind-ecom\\\\first-next-app\\\\pages\\\\_app.js\",\n                lineNumber: 11,\n                columnNumber: 9\n            }, this)\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\sdtva\\\\Desktop\\\\next-tailwind-ecom\\\\first-next-app\\\\pages\\\\_app.js\",\n            lineNumber: 10,\n            columnNumber: 7\n        }, this)\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\sdtva\\\\Desktop\\\\next-tailwind-ecom\\\\first-next-app\\\\pages\\\\_app.js\",\n        lineNumber: 9,\n        columnNumber: 5\n    }, this);\n}\nfunction Auth({ children , adminOnly  }) {\n    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();\n    const { status , data: session  } = (0,next_auth_react__WEBPACK_IMPORTED_MODULE_2__.useSession)({\n        required: true,\n        onUnauthenticated () {\n            router.push(\"/unauthorized?message=login required\");\n        }\n    });\n    if (status === \"loading\") {\n        return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            children: \"Chargement...\"\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\sdtva\\\\Desktop\\\\next-tailwind-ecom\\\\first-next-app\\\\pages\\\\_app.js\",\n            lineNumber: 34,\n            columnNumber: 12\n        }, this);\n    }\n    if (adminOnly && !session.user.isAdmin) {\n        router.push(\"/unauthorized?message=admin login required\");\n    }\n    return children;\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9fYXBwLmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQStCO0FBQytCO0FBQ2Y7QUFDUDtBQUN1QjtBQUUvRCxTQUFTSyxLQUFLLENBQUMsRUFBRUMsU0FBUyxHQUFFQyxTQUFTLEVBQUUsRUFBRUMsT0FBTyxHQUFFLEdBQUdELFNBQVMsRUFBRSxHQUFFLEVBQUU7SUFDbEUscUJBQ0UsOERBQUNQLDREQUFlO1FBQUNRLE9BQU8sRUFBRUEsT0FBTztrQkFDL0IsNEVBQUNOLHVEQUFhO3NCQUNaLDRFQUFDRSx5RUFBb0I7Z0JBQUNLLFlBQVksRUFBRSxJQUFJOzBCQUNyQ0gsU0FBUyxDQUFDSSxJQUFJLGlCQUNiLDhEQUFDQyxJQUFJO29CQUFDQyxTQUFTLEVBQUVOLFNBQVMsQ0FBQ0ksSUFBSSxDQUFDRSxTQUFTOzhCQUN2Qyw0RUFBQ04sU0FBUzt3QkFBRSxHQUFHQyxTQUFTOzs7Ozs0QkFBSTs7Ozs7d0JBQ3ZCLGlCQUVQLDhEQUFDRCxTQUFTO29CQUFFLEdBQUdDLFNBQVM7Ozs7O3dCQUFJOzs7OztvQkFFVDs7Ozs7Z0JBQ1Q7Ozs7O1lBQ0EsQ0FDbEI7Q0FDSDtBQUVELFNBQVNJLElBQUksQ0FBQyxFQUFFRSxRQUFRLEdBQUVELFNBQVMsR0FBRSxFQUFFO0lBQ3JDLE1BQU1FLE1BQU0sR0FBR1gsc0RBQVMsRUFBRTtJQUMxQixNQUFNLEVBQUVZLE1BQU0sR0FBRUMsSUFBSSxFQUFFUixPQUFPLEdBQUUsR0FBR1AsMkRBQVUsQ0FBQztRQUMzQ2dCLFFBQVEsRUFBRSxJQUFJO1FBQ2RDLGlCQUFpQixJQUFHO1lBQ2xCSixNQUFNLENBQUNLLElBQUksQ0FBQyxzQ0FBc0MsQ0FBQyxDQUFDO1NBQ3JEO0tBQ0YsQ0FBQztJQUNGLElBQUlKLE1BQU0sS0FBSyxTQUFTLEVBQUU7UUFDeEIscUJBQU8sOERBQUNLLEtBQUc7c0JBQUMsZUFBYTs7Ozs7Z0JBQU0sQ0FBQztLQUNqQztJQUNELElBQUlSLFNBQVMsSUFBSSxDQUFDSixPQUFPLENBQUNhLElBQUksQ0FBQ0MsT0FBTyxFQUFFO1FBQ3RDUixNQUFNLENBQUNLLElBQUksQ0FBQyw0Q0FBNEMsQ0FBQyxDQUFDO0tBQzNEO0lBRUQsT0FBT04sUUFBUSxDQUFDO0NBQ2pCO0FBRUQsaUVBQWVSLEtBQUssRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL25leHQtdGFpbHdpbmQtYW1hem9uYS8uL3BhZ2VzL19hcHAuanM/ZTBhZCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJy4uL3N0eWxlcy9nbG9iYWxzLmNzcyc7XHJcbmltcG9ydCB7IFNlc3Npb25Qcm92aWRlciwgdXNlU2Vzc2lvbiB9IGZyb20gJ25leHQtYXV0aC9yZWFjdCc7XHJcbmltcG9ydCB7IFN0b3JlUHJvdmlkZXIgfSBmcm9tICcuLi91dGlscy9TdG9yZSc7XHJcbmltcG9ydCB7IHVzZVJvdXRlciB9IGZyb20gJ25leHQvcm91dGVyJztcclxuaW1wb3J0IHsgUGF5UGFsU2NyaXB0UHJvdmlkZXIgfSBmcm9tICdAcGF5cGFsL3JlYWN0LXBheXBhbC1qcyc7XHJcblxyXG5mdW5jdGlvbiBNeUFwcCh7IENvbXBvbmVudCwgcGFnZVByb3BzOiB7IHNlc3Npb24sIC4uLnBhZ2VQcm9wcyB9IH0pIHtcclxuICByZXR1cm4gKFxyXG4gICAgPFNlc3Npb25Qcm92aWRlciBzZXNzaW9uPXtzZXNzaW9ufT5cclxuICAgICAgPFN0b3JlUHJvdmlkZXI+XHJcbiAgICAgICAgPFBheVBhbFNjcmlwdFByb3ZpZGVyIGRlZmVyTG9hZGluZz17dHJ1ZX0+XHJcbiAgICAgICAgICB7Q29tcG9uZW50LmF1dGggPyAoXHJcbiAgICAgICAgICAgIDxBdXRoIGFkbWluT25seT17Q29tcG9uZW50LmF1dGguYWRtaW5Pbmx5fT5cclxuICAgICAgICAgICAgICA8Q29tcG9uZW50IHsuLi5wYWdlUHJvcHN9IC8+XHJcbiAgICAgICAgICAgIDwvQXV0aD5cclxuICAgICAgICAgICkgOiAoXHJcbiAgICAgICAgICAgIDxDb21wb25lbnQgey4uLnBhZ2VQcm9wc30gLz5cclxuICAgICAgICAgICl9XHJcbiAgICAgICAgPC9QYXlQYWxTY3JpcHRQcm92aWRlcj5cclxuICAgICAgPC9TdG9yZVByb3ZpZGVyPlxyXG4gICAgPC9TZXNzaW9uUHJvdmlkZXI+XHJcbiAgKTtcclxufVxyXG5cclxuZnVuY3Rpb24gQXV0aCh7IGNoaWxkcmVuLCBhZG1pbk9ubHkgfSkge1xyXG4gIGNvbnN0IHJvdXRlciA9IHVzZVJvdXRlcigpO1xyXG4gIGNvbnN0IHsgc3RhdHVzLCBkYXRhOiBzZXNzaW9uIH0gPSB1c2VTZXNzaW9uKHtcclxuICAgIHJlcXVpcmVkOiB0cnVlLFxyXG4gICAgb25VbmF1dGhlbnRpY2F0ZWQoKSB7XHJcbiAgICAgIHJvdXRlci5wdXNoKCcvdW5hdXRob3JpemVkP21lc3NhZ2U9bG9naW4gcmVxdWlyZWQnKTtcclxuICAgIH0sXHJcbiAgfSk7XHJcbiAgaWYgKHN0YXR1cyA9PT0gJ2xvYWRpbmcnKSB7XHJcbiAgICByZXR1cm4gPGRpdj5DaGFyZ2VtZW50Li4uPC9kaXY+O1xyXG4gIH1cclxuICBpZiAoYWRtaW5Pbmx5ICYmICFzZXNzaW9uLnVzZXIuaXNBZG1pbikge1xyXG4gICAgcm91dGVyLnB1c2goJy91bmF1dGhvcml6ZWQ/bWVzc2FnZT1hZG1pbiBsb2dpbiByZXF1aXJlZCcpO1xyXG4gIH1cclxuXHJcbiAgcmV0dXJuIGNoaWxkcmVuO1xyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBNeUFwcDtcclxuIl0sIm5hbWVzIjpbIlNlc3Npb25Qcm92aWRlciIsInVzZVNlc3Npb24iLCJTdG9yZVByb3ZpZGVyIiwidXNlUm91dGVyIiwiUGF5UGFsU2NyaXB0UHJvdmlkZXIiLCJNeUFwcCIsIkNvbXBvbmVudCIsInBhZ2VQcm9wcyIsInNlc3Npb24iLCJkZWZlckxvYWRpbmciLCJhdXRoIiwiQXV0aCIsImFkbWluT25seSIsImNoaWxkcmVuIiwicm91dGVyIiwic3RhdHVzIiwiZGF0YSIsInJlcXVpcmVkIiwib25VbmF1dGhlbnRpY2F0ZWQiLCJwdXNoIiwiZGl2IiwidXNlciIsImlzQWRtaW4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/_app.js\n");
 
 /***/ }),
 
-/***/ 2929:
+/***/ "./utils/Store.js":
+/*!************************!*\
+  !*** ./utils/Store.js ***!
+  \************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Store\": () => (/* binding */ Store),\n/* harmony export */   \"StoreProvider\": () => (/* binding */ StoreProvider)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! js-cookie */ \"js-cookie\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([js_cookie__WEBPACK_IMPORTED_MODULE_2__]);\njs_cookie__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\n\nconst Store = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)();\nconst initialState = {\n    cart: js_cookie__WEBPACK_IMPORTED_MODULE_2__[\"default\"].get(\"cart\") ? JSON.parse(js_cookie__WEBPACK_IMPORTED_MODULE_2__[\"default\"].get(\"cart\")) : {\n        cartItems: [],\n        shippingAddress: {},\n        paymentMethod: \"\"\n    }\n};\nfunction reducer(state, action) {\n    switch(action.type){\n        case \"CART_ADD_ITEM\":\n            {\n                const newItem = action.payload;\n                const existItem = state.cart.cartItems.find((item)=>item.slug === newItem.slug\n                );\n                const cartItems = existItem ? state.cart.cartItems.map((item)=>item.name === existItem.name ? newItem : item\n                ) : [\n                    ...state.cart.cartItems,\n                    newItem\n                ];\n                js_cookie__WEBPACK_IMPORTED_MODULE_2__[\"default\"].set(\"cart\", JSON.stringify({\n                    ...state.cart,\n                    cartItems\n                }));\n                return {\n                    ...state,\n                    cart: {\n                        ...state.cart,\n                        cartItems\n                    }\n                };\n            }\n        case \"CART_REMOVE_ITEM\":\n            {\n                const cartItems = state.cart.cartItems.filter((item)=>item.slug !== action.payload.slug\n                );\n                js_cookie__WEBPACK_IMPORTED_MODULE_2__[\"default\"].set(\"cart\", JSON.stringify({\n                    ...state.cart,\n                    cartItems\n                }));\n                return {\n                    ...state,\n                    cart: {\n                        ...state.cart,\n                        cartItems\n                    }\n                };\n            }\n        case \"CART_RESET\":\n            return {\n                ...state,\n                cart: {\n                    cartItems: [],\n                    shippingAddress: {\n                        location: {}\n                    },\n                    paymentMethod: \"\"\n                }\n            };\n        case \"CART_CLEAR_ITEMS\":\n            return {\n                ...state,\n                cart: {\n                    ...state.cart,\n                    cartItems: []\n                }\n            };\n        case \"SAVE_SHIPPING_ADDRESS\":\n            return {\n                ...state,\n                cart: {\n                    ...state.cart,\n                    shippingAddress: {\n                        ...state.cart.shippingAddress,\n                        ...action.payload\n                    }\n                }\n            };\n        case \"SAVE_PAYMENT_METHOD\":\n            return {\n                ...state,\n                cart: {\n                    ...state.cart,\n                    paymentMethod: action.payload\n                }\n            };\n        default:\n            return state;\n    }\n}\nfunction StoreProvider({ children  }) {\n    const { 0: state , 1: dispatch  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useReducer)(reducer, initialState);\n    const value = {\n        state,\n        dispatch\n    };\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Store.Provider, {\n        value: value,\n        children: children\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\sdtva\\\\Desktop\\\\next-tailwind-ecom\\\\first-next-app\\\\utils\\\\Store.js\",\n        lineNumber: 73,\n        columnNumber: 10\n    }, this);\n}\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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LENBQUNSLElBQUk7b0JBQ2JLLGVBQWUsRUFBRTt3QkFDZixHQUFHRyxLQUFLLENBQUNSLElBQUksQ0FBQ0ssZUFBZTt3QkFDN0IsR0FBR0ksTUFBTSxDQUFDRyxPQUFPO3FCQUNsQjtpQkFDRjthQUNGLENBQUM7UUFDSixLQUFLLHFCQUFxQjtZQUN4QixPQUFPO2dCQUNMLEdBQUdKLEtBQUs7Z0JBQ1JSLElBQUksRUFBRTtvQkFDSixHQUFHUSxLQUFLLENBQUNSLElBQUk7b0JBQ2JNLGFBQWEsRUFBRUcsTUFBTSxDQUFDRyxPQUFPO2lCQUM5QjthQUNGLENBQUM7UUFDSjtZQUNFLE9BQU9KLEtBQUssQ0FBQztLQUNoQjtDQUNGO0FBRU0sU0FBU2UsYUFBYSxDQUFDLEVBQUVDLFFBQVEsR0FBRSxFQUFFO0lBQzFDLE1BQU0sRUF0RVIsR0FzRVNoQixLQUFLLEdBdEVkLEdBc0VnQmlCLFFBQVEsTUFBSTdCLGlEQUFVLENBQUNXLE9BQU8sRUFBRVIsWUFBWSxDQUFDO0lBQzNELE1BQU0yQixLQUFLLEdBQUc7UUFBRWxCLEtBQUs7UUFBRWlCLFFBQVE7S0FBRTtJQUNqQyxxQkFBTyw4REFBQzNCLEtBQUssQ0FBQzZCLFFBQVE7UUFBQ0QsS0FBSyxFQUFFQSxLQUFLO2tCQUFHRixRQUFROzs7OztZQUFrQixDQUFDO0NBQ2xFIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV4dC10YWlsd2luZC1hbWF6b25hLy4vdXRpbHMvU3RvcmUuanM/OGI4YiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVDb250ZXh0LCB1c2VSZWR1Y2VyIH0gZnJvbSAncmVhY3QnO1xyXG5pbXBvcnQgQ29va2llcyBmcm9tICdqcy1jb29raWUnO1xyXG5cclxuZXhwb3J0IGNvbnN0IFN0b3JlID0gY3JlYXRlQ29udGV4dCgpO1xyXG5cclxuY29uc3QgaW5pdGlhbFN0YXRlID0ge1xyXG4gIGNhcnQ6IENvb2tpZXMuZ2V0KCdjYXJ0JylcclxuICAgID8gSlNPTi5wYXJzZShDb29raWVzLmdldCgnY2FydCcpKVxyXG4gICAgOiB7IGNhcnRJdGVtczogW10sIHNoaXBwaW5nQWRkcmVzczoge30sIHBheW1lbnRNZXRob2Q6ICcnIH0sXHJcbn07XHJcblxyXG5mdW5jdGlvbiByZWR1Y2VyKHN0YXRlLCBhY3Rpb24pIHtcclxuICBzd2l0Y2ggKGFjdGlvbi50eXBlKSB7XHJcbiAgICBjYXNlICdDQVJUX0FERF9JVEVNJzoge1xyXG4gICAgICBjb25zdCBuZXdJdGVtID0gYWN0aW9uLnBheWxvYWQ7XHJcbiAgICAgIGNvbnN0IGV4aXN0SXRlbSA9IHN0YXRlLmNhcnQuY2FydEl0ZW1zLmZpbmQoXHJcbiAgICAgICAgKGl0ZW0pID0+IGl0ZW0uc2x1ZyA9PT0gbmV3SXRlbS5zbHVnXHJcbiAgICAgICk7XHJcbiAgICAgIGNvbnN0IGNhcnRJdGVtcyA9IGV4aXN0SXRlbVxyXG4gICAgICAgID8gc3RhdGUuY2FydC5jYXJ0SXRlbXMubWFwKChpdGVtKSA9PlxyXG4gICAgICAgICAgICBpdGVtLm5hbWUgPT09IGV4aXN0SXRlbS5uYW1lID8gbmV3SXRlbSA6IGl0ZW1cclxuICAgICAgICAgIClcclxuICAgICAgICA6IFsuLi5zdGF0ZS5jYXJ0LmNhcnRJdGVtcywgbmV3SXRlbV07XHJcbiAgICAgIENvb2tpZXMuc2V0KCdjYXJ0JywgSlNPTi5zdHJpbmdpZnkoeyAuLi5zdGF0ZS5jYXJ0LCBjYXJ0SXRlbXMgfSkpO1xyXG4gICAgICByZXR1cm4geyAuLi5zdGF0ZSwgY2FydDogeyAuLi5zdGF0ZS5jYXJ0LCBjYXJ0SXRlbXMgfSB9O1xyXG4gICAgfVxyXG4gICAgY2FzZSAnQ0FSVF9SRU1PVkVfSVRFTSc6IHtcclxuICAgICAgY29uc3QgY2FydEl0ZW1zID0gc3RhdGUuY2FydC5jYXJ0SXRlbXMuZmlsdGVyKFxyXG4gICAgICAgIChpdGVtKSA9PiBpdGVtLnNsdWcgIT09IGFjdGlvbi5wYXlsb2FkLnNsdWdcclxuICAgICAgKTtcclxuICAgICAgQ29va2llcy5zZXQoJ2NhcnQnLCBKU09OLnN0cmluZ2lmeSh7IC4uLnN0YXRlLmNhcnQsIGNhcnRJdGVtcyB9KSk7XHJcbiAgICAgIHJldHVybiB7IC4uLnN0YXRlLCBjYXJ0OiB7IC4uLnN0YXRlLmNhcnQsIGNhcnRJdGVtcyB9IH07XHJcbiAgICB9XHJcbiAgICBjYXNlICdDQVJUX1JFU0VUJzpcclxuICAgICAgcmV0dXJuIHtcclxuICAgICAgICAuLi5zdGF0ZSxcclxuICAgICAgICBjYXJ0OiB7XHJcbiAgICAgICAgICBjYXJ0SXRlbXM6IFtdLFxyXG4gICAgICAgICAgc2hpcHBpbmdBZGRyZXNzOiB7IGxvY2F0aW9uOiB7fSB9LFxyXG4gICAgICAgICAgcGF5bWVudE1ldGhvZDogJycsXHJcbiAgICAgICAgfSxcclxuICAgICAgfTtcclxuICAgIGNhc2UgJ0NBUlRfQ0xFQVJfSVRFTVMnOlxyXG4gICAgICByZXR1cm4geyAuLi5zdGF0ZSwgY2FydDogeyAuLi5zdGF0ZS5jYXJ0LCBjYXJ0SXRlbXM6IFtdIH0gfTtcclxuXHJcbiAgICBjYXNlICdTQVZFX1NISVBQSU5HX0FERFJFU1MnOlxyXG4gICAgICByZXR1cm4ge1xyXG4gICAgICAgIC4uLnN0YXRlLFxyXG4gICAgICAgIGNhcnQ6IHtcclxuICAgICAgICAgIC4uLnN0YXRlLmNhcnQsXHJcbiAgICAgICAgICBzaGlwcGluZ0FkZHJlc3M6IHtcclxuICAgICAgICAgICAgLi4uc3RhdGUuY2FydC5zaGlwcGluZ0FkZHJlc3MsXHJcbiAgICAgICAgICAgIC4uLmFjdGlvbi5wYXlsb2FkLFxyXG4gICAgICAgICAgfSxcclxuICAgICAgICB9LFxyXG4gICAgICB9O1xyXG4gICAgY2FzZSAnU0FWRV9QQVlNRU5UX01FVEhPRCc6XHJcbiAgICAgIHJldHVybiB7XHJcbiAgICAgICAgLi4uc3RhdGUsXHJcbiAgICAgICAgY2FydDoge1xyXG4gICAgICAgICAgLi4uc3RhdGUuY2FydCxcclxuICAgICAgICAgIHBheW1lbnRNZXRob2Q6IGFjdGlvbi5wYXlsb2FkLFxyXG4gICAgICAgIH0sXHJcbiAgICAgIH07XHJcbiAgICBkZWZhdWx0OlxyXG4gICAgICByZXR1cm4gc3RhdGU7XHJcbiAgfVxyXG59XHJcblxyXG5leHBvcnQgZnVuY3Rpb24gU3RvcmVQcm92aWRlcih7IGNoaWxkcmVuIH0pIHtcclxuICBjb25zdCBbc3RhdGUsIGRpc3BhdGNoXSA9IHVzZVJlZHVjZXIocmVkdWNlciwgaW5pdGlhbFN0YXRlKTtcclxuICBjb25zdCB2YWx1ZSA9IHsgc3RhdGUsIGRpc3BhdGNoIH07XHJcbiAgcmV0dXJuIDxTdG9yZS5Qcm92aWRlciB2YWx1ZT17dmFsdWV9PntjaGlsZHJlbn08L1N0b3JlLlByb3ZpZGVyPjtcclxufVxyXG4iXSwibmFtZXMiOlsiY3JlYXRlQ29udGV4dCIsInVzZVJlZHVjZXIiLCJDb29raWVzIiwiU3RvcmUiLCJpbml0aWFsU3RhdGUiLCJjYXJ0IiwiZ2V0IiwiSlNPTiIsInBhcnNlIiwiY2FydEl0ZW1zIiwic2hpcHBpbmdBZGRyZXNzIiwicGF5bWVudE1ldGhvZCIsInJlZHVjZXIiLCJzdGF0ZSIsImFjdGlvbiIsInR5cGUiLCJuZXdJdGVtIiwicGF5bG9hZCIsImV4aXN0SXRlbSIsImZpbmQiLCJpdGVtIiwic2x1ZyIsIm1hcCIsIm5hbWUiLCJzZXQiLCJzdHJpbmdpZnkiLCJmaWx0ZXIiLCJsb2NhdGlvbiIsIlN0b3JlUHJvdmlkZXIiLCJjaGlsZHJlbiIsImRpc3BhdGNoIiwidmFsdWUiLCJQcm92aWRlciJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./utils/Store.js\n");
+
+/***/ }),
+
+/***/ "./styles/globals.css":
+/*!****************************!*\
+  !*** ./styles/globals.css ***!
+  \****************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "@paypal/react-paypal-js":
+/*!******************************************!*\
+  !*** external "@paypal/react-paypal-js" ***!
+  \******************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("@paypal/react-paypal-js");
 
 /***/ }),
 
-/***/ 1649:
+/***/ "next-auth/react":
+/*!**********************************!*\
+  !*** external "next-auth/react" ***!
+  \**********************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next-auth/react");
 
 /***/ }),
 
-/***/ 1853:
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/router");
 
 /***/ }),
 
-/***/ 6689:
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react");
 
 /***/ }),
 
-/***/ 997:
+/***/ "react/jsx-dev-runtime":
+/*!****************************************!*\
+  !*** external "react/jsx-dev-runtime" ***!
+  \****************************************/
 /***/ ((module) => {
 
-module.exports = require("react/jsx-runtime");
+"use strict";
+module.exports = require("react/jsx-dev-runtime");
 
 /***/ }),
 
-/***/ 9915:
+/***/ "js-cookie":
+/*!****************************!*\
+  !*** external "js-cookie" ***!
+  \****************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = import("js-cookie");;
 
 /***/ })
@@ -122,7 +117,7 @@ module.exports = import("js-cookie");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [2148], () => (__webpack_exec__(8484)));
+var __webpack_exports__ = (__webpack_exec__("./pages/_app.js"));
 module.exports = __webpack_exports__;
 
 })();
