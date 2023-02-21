@@ -10,6 +10,9 @@ import { Store } from '../utils/Store';
 import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import { SearchIcon } from '@heroicons/react/outline';
+import logo1 from "../public/logo-complet.png"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -49,7 +52,10 @@ export default function Layout({ title, children }) {
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
             <Link href="/">
-              <a className="text-lg font-bold">AnalyaTech</a>
+              <a className="text-lg font-bold">
+                <img src={logo1} alt="logo" />
+              </a>
+
             </Link>
             <form
               onSubmit={submitHandler}
@@ -72,7 +78,8 @@ export default function Layout({ title, children }) {
             <div className='flex'>
               <Link href="/cart">
                 <a className="p-2">
-                  Panier
+                <ShoppingCartIcon />
+                  
                   {cartItemsCount > 0 && (
                     <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
                       {cartItemsCount}
@@ -80,6 +87,7 @@ export default function Layout({ title, children }) {
                   )}
                 </a>
               </Link>
+              &nbsp;&nbsp;
 
               {status === 'loading' ? (
                 'Loading'
@@ -125,7 +133,9 @@ export default function Layout({ title, children }) {
                 </Menu>
               ) : (
                 <Link href="/login">
-                  <a className="p-2">Connexion</a>
+                  <a className="p-2">
+                    <AccountCircleIcon />
+                  </a>
                 </Link>
               )}
             </div>
@@ -133,7 +143,7 @@ export default function Layout({ title, children }) {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
-          <p>2023 AnalyaTech</p>
+          <p>2023 <span className='italic'>Vai A33G</span></p>
         </footer>
       </div>
     </>
