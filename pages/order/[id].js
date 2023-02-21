@@ -172,7 +172,7 @@ function OrderScreen() {
     <Layout title={`Order ${orderId}`}>
       <h1 className="mb-4 text-xl">{`Order ${orderId}`}</h1>
       {loading ? (
-        <div>Loading...</div>
+        <div>Chargement...</div>
       ) : error ? (
         <div className="alert-error">{error}</div>
       ) : (
@@ -272,7 +272,7 @@ function OrderScreen() {
                 {!isPaid && (
                   <li>
                     {isPending ? (
-                      <div>Loading...</div>
+                      <div>Chargement...</div>
                     ) : (
                       <div className="w-full">
                         <PayPalButtons
