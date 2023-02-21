@@ -169,8 +169,8 @@ function OrderScreen() {
   }
 
   return (
-    <Layout title={`Order ${orderId}`}>
-      <h1 className="mb-4 text-xl">{`Order ${orderId}`}</h1>
+    <Layout title={`Commande ${orderId}`}>
+      <h1 className="mb-4 text-xl italic">{`Commande n° ${orderId}`}</h1>
       {loading ? (
         <div>Chargement...</div>
       ) : error ? (
@@ -179,7 +179,7 @@ function OrderScreen() {
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
             <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Adresse de livraison</h2>
+              <h2 className="mb-2 text-lg ">Adresse de livraison</h2>
               <div>
                 {shippingAddress.fullName}, {shippingAddress.address},{' '}
                 {shippingAddress.city}, {shippingAddress.postalCode},{' '}
