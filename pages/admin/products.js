@@ -93,7 +93,7 @@ export default function AdminProdcutsScreen() {
     }
   };
   return (
-    <Layout title="Admin Products">
+    <Layout title="Articles">
       <div className="grid md:grid-cols-4 md:gap-5">
         <div>
           <ul>
@@ -138,7 +138,7 @@ export default function AdminProdcutsScreen() {
                     <th className="p-5 text-left">nom</th>
                     <th className="p-5 text-left">prix</th>
                     <th className="p-5 text-left">catégorie</th>
-                    <th className="p-5 text-left">compte</th>
+                    <th className="p-5 text-left">stock</th>
                     <th className="p-5 text-left">note</th>
                     <th className="p-5 text-left">actions</th>
                   </tr>

@@ -38,7 +38,7 @@ export default function AdminOrderScreen() {
   }, []);
 
   return (
-    <Layout title="Admin Dashboard">
+    <Layout title="Commande">
       <div className="grid md:grid-cols-4 md:gap-5">
         <div>
           <ul>
@@ -47,14 +47,14 @@ export default function AdminOrderScreen() {
             </li>
             <li>
               <Link href="/admin/orders">
-                <a className="font-bold">Commande</a>
+                <a className="font-bold">Commande(s)</a>
               </Link>
             </li>
             <li>
               <Link href="/admin/products">Article(s)</Link>
             </li>
             <li>
-              <Link href="/admin/users">Utilisateurs</Link>
+              <Link href="/admin/users">Utilisateur(s)</Link>
             </li>
           </ul>
         </div>
@@ -93,12 +93,12 @@ export default function AdminOrderScreen() {
                       <td className="p-5">
                         {order.isPaid
                           ? `${order.paidAt.substring(0, 10)}`
-                          : 'not paid'}
+                          : 'Non payé'}
                       </td>
                       <td className="p-5">
                         {order.isDelivered
                           ? `${order.deliveredAt.substring(0, 10)}`
-                          : 'not delivered'}
+                          : 'Non livré'}
                       </td>
                       <td className="p-5">
                         <Link href={`/order/${order._id}`} passHref>

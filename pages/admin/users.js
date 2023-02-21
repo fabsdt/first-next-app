@@ -53,14 +53,14 @@ function AdminUsersScreen() {
   }, [successDelete]);
 
   const deleteHandler = async (userId) => {
-    if (!window.confirm('Are you sure?')) {
+    if (!window.confirm('Vous confirmez ?')) {
       return;
     }
     try {
       dispatch({ type: 'DELETE_REQUEST' });
       await axios.delete(`/api/admin/users/${userId}`);
       dispatch({ type: 'DELETE_SUCCESS' });
-      toast.success('User deleted successfully');
+      toast.success('Utilisateur supprimé avec succès');
     } catch (err) {
       dispatch({ type: 'DELETE_FAIL' });
       toast.error(getError(err));
@@ -68,7 +68,7 @@ function AdminUsersScreen() {
   };
 
   return (
-    <Layout title="Users">
+    <Layout title="Utilisateurs">
       <div className="grid md:grid-cols-4 md:gap-5">
         <div>
           <ul>
@@ -101,7 +101,7 @@ function AdminUsersScreen() {
                 <thead className="border-b">
                   <tr>
                     <th className="px-5 text-left">id</th>
-                    <th className="p-5 text-left">name</th>
+                    <th className="p-5 text-left">nom</th>
                     <th className="p-5 text-left">email</th>
                     <th className="p-5 text-left">admin</th>
                     <th className="p-5 text-left">actions</th>
@@ -113,7 +113,7 @@ function AdminUsersScreen() {
                       <td className=" p-5 ">{user._id.substring(20, 24)}</td>
                       <td className=" p-5 ">{user.name}</td>
                       <td className=" p-5 ">{user.email}</td>
-                      <td className=" p-5 ">{user.isAdmin ? 'YES' : 'NO'}</td>
+                      <td className=" p-5 ">{user.isAdmin ? 'OUI' : 'NON'}</td>
                       <td className=" p-5 ">
                         <Link href={`/admin/user/${user._id}`} passHref>
                           <a type="button" className="default-button">

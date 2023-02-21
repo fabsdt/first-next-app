@@ -70,20 +70,20 @@ function AdminDashboardScreen() {
     labels: summary.salesData.map((x) => x._id), // 2022/01 2022/03
     datasets: [
       {
-        label: 'Sales',
+        label: 'Ventes',
         backgroundColor: 'rgba(162, 222, 208, 1)',
         data: summary.salesData.map((x) => x.totalSales),
       },
     ],
   };
   return (
-    <Layout title="Admin Dashboard">
+    <Layout title="Panneau admin">
       <div className="grid  md:grid-cols-4 md:gap-5">
         <div>
           <ul>
             <li>
               <Link href="/admin/dashboard">
-                <a className="font-bold">tableau de bord</a>
+                <a className="font-bold">Tableau de bord</a>
               </Link>
             </li>
             <li>
@@ -109,22 +109,22 @@ function AdminDashboardScreen() {
                 <div className="card m-5 p-5">
                   <p className="text-3xl">${summary.ordersPrice} </p>
                   <p>Ventes</p>
-                  <Link href="/admin/orders">View sales</Link>
+                  <Link href="/admin/orders">Voir les ventes</Link>
                 </div>
                 <div className="card m-5 p-5">
                   <p className="text-3xl">{summary.ordersCount} </p>
                   <p>Commande(s)</p>
-                  <Link href="/admin/orders">Voir Commande(s)</Link>
+                  <Link href="/admin/orders">Voir les commandes</Link>
                 </div>
                 <div className="card m-5 p-5">
                   <p className="text-3xl">{summary.productsCount} </p>
                   <p>Article(s)</p>
-                  <Link href="/admin/products">View products</Link>
+                  <Link href="/admin/products">Voir les articles</Link>
                 </div>
                 <div className="card m-5 p-5">
                   <p className="text-3xl">{summary.usersCount} </p>
                   <p>Utilisateur(s)</p>
-                  <Link href="/admin/users">Voir utilisateur(s)</Link>
+                  <Link href="/admin/users">Voir les utilisateurs</Link>
                 </div>
               </div>
               <h2 className="text-xl">Rapport des ventes</h2>
