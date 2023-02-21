@@ -1,85 +1,128 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/api/admin/summary";
-exports.ids = ["pages/api/admin/summary"];
+exports.id = 4097;
+exports.ids = [4097];
 exports.modules = {
 
-/***/ "mongoose":
-/*!***************************!*\
-  !*** external "mongoose" ***!
-  \***************************/
+/***/ 2663:
 /***/ ((module) => {
 
 module.exports = require("mongoose");
 
 /***/ }),
 
-/***/ "next-auth/react":
-/*!**********************************!*\
-  !*** external "next-auth/react" ***!
-  \**********************************/
+/***/ 1649:
 /***/ ((module) => {
 
 module.exports = require("next-auth/react");
 
 /***/ }),
 
-/***/ "(api)/./models/Order.js":
-/*!*************************!*\
-  !*** ./models/Order.js ***!
-  \*************************/
+/***/ 6274:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst orderSchema = new (mongoose__WEBPACK_IMPORTED_MODULE_0___default().Schema)({\n    user: {\n        type: (mongoose__WEBPACK_IMPORTED_MODULE_0___default().Schema.Types.ObjectId),\n        ref: \"User\",\n        required: true\n    },\n    orderItems: [\n        {\n            name: {\n                type: String,\n                required: true\n            },\n            quantity: {\n                type: Number,\n                required: true\n            },\n            image: {\n                type: String,\n                required: true\n            },\n            price: {\n                type: Number,\n                required: true\n            }\n        }, \n    ],\n    shippingAddress: {\n        fullName: {\n            type: String,\n            required: true\n        },\n        address: {\n            type: String,\n            required: true\n        },\n        city: {\n            type: String,\n            required: true\n        },\n        postalCode: {\n            type: String,\n            required: true\n        },\n        country: {\n            type: String,\n            required: true\n        }\n    },\n    paymentMethod: {\n        type: String,\n        required: true\n    },\n    paymentResult: {\n        id: String,\n        status: String,\n        email_address: String\n    },\n    itemsPrice: {\n        type: Number,\n        required: true\n    },\n    shippingPrice: {\n        type: Number,\n        required: true\n    },\n    taxPrice: {\n        type: Number,\n        required: true\n    },\n    totalPrice: {\n        type: Number,\n        required: true\n    },\n    isPaid: {\n        type: Boolean,\n        required: true,\n        default: false\n    },\n    isDelivered: {\n        type: Boolean,\n        required: true,\n        default: false\n    },\n    paidAt: {\n        type: Date\n    },\n    deliveredAt: {\n        type: Date\n    }\n}, {\n    timestamps: true\n});\nconst Order = (mongoose__WEBPACK_IMPORTED_MODULE_0___default().models.Order) || mongoose__WEBPACK_IMPORTED_MODULE_0___default().model(\"Order\", orderSchema);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Order);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbHMvT3JkZXIuanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQWdDO0FBRWhDLE1BQU1DLFdBQVcsR0FBRyxJQUFJRCx3REFBZSxDQUNyQztJQUNFRyxJQUFJLEVBQUU7UUFBRUMsSUFBSSxFQUFFSix1RUFBOEI7UUFBRU8sR0FBRyxFQUFFLE1BQU07UUFBRUMsUUFBUSxFQUFFLElBQUk7S0FBRTtJQUMzRUMsVUFBVSxFQUFFO1FBQ1Y7WUFDRUMsSUFBSSxFQUFFO2dCQUFFTixJQUFJLEVBQUVPLE1BQU07Z0JBQUVILFFBQVEsRUFBRSxJQUFJO2FBQUU7WUFDdENJLFFBQVEsRUFBRTtnQkFBRVIsSUFBSSxFQUFFUyxNQUFNO2dCQUFFTCxRQUFRLEVBQUUsSUFBSTthQUFFO1lBQzFDTSxLQUFLLEVBQUU7Z0JBQUVWLElBQUksRUFBRU8sTUFBTTtnQkFBRUgsUUFBUSxFQUFFLElBQUk7YUFBRTtZQUN2Q08sS0FBSyxFQUFFO2dCQUFFWCxJQUFJLEVBQUVTLE1BQU07Z0JBQUVMLFFBQVEsRUFBRSxJQUFJO2FBQUU7U0FDeEM7S0FDRjtJQUNEUSxlQUFlLEVBQUU7UUFDZkMsUUFBUSxFQUFFO1lBQUViLElBQUksRUFBRU8sTUFBTTtZQUFFSCxRQUFRLEVBQUUsSUFBSTtTQUFFO1FBQzFDVSxPQUFPLEVBQUU7WUFBRWQsSUFBSSxFQUFFTyxNQUFNO1lBQUVILFFBQVEsRUFBRSxJQUFJO1NBQUU7UUFDekNXLElBQUksRUFBRTtZQUFFZixJQUFJLEVBQUVPLE1BQU07WUFBRUgsUUFBUSxFQUFFLElBQUk7U0FBRTtRQUN0Q1ksVUFBVSxFQUFFO1lBQUVoQixJQUFJLEVBQUVPLE1BQU07WUFBRUgsUUFBUSxFQUFFLElBQUk7U0FBRTtRQUM1Q2EsT0FBTyxFQUFFO1lBQUVqQixJQUFJLEVBQUVPLE1BQU07WUFBRUgsUUFBUSxFQUFFLElBQUk7U0FBRTtLQUMxQztJQUNEYyxhQUFhLEVBQUU7UUFBRWxCLElBQUksRUFBRU8sTUFBTTtRQUFFSCxRQUFRLEVBQUUsSUFBSTtLQUFFO0lBQy9DZSxhQUFhLEVBQUU7UUFBRUMsRUFBRSxFQUFFYixNQUFNO1FBQUVjLE1BQU0sRUFBRWQsTUFBTTtRQUFFZSxhQUFhLEVBQUVmLE1BQU07S0FBRTtJQUNwRWdCLFVBQVUsRUFBRTtRQUFFdkIsSUFBSSxFQUFFUyxNQUFNO1FBQUVMLFFBQVEsRUFBRSxJQUFJO0tBQUU7SUFDNUNvQixhQUFhLEVBQUU7UUFBRXhCLElBQUksRUFBRVMsTUFBTTtRQUFFTCxRQUFRLEVBQUUsSUFBSTtLQUFFO0lBQy9DcUIsUUFBUSxFQUFFO1FBQUV6QixJQUFJLEVBQUVTLE1BQU07UUFBRUwsUUFBUSxFQUFFLElBQUk7S0FBRTtJQUMxQ3NCLFVBQVUsRUFBRTtRQUFFMUIsSUFBSSxFQUFFUyxNQUFNO1FBQUVMLFFBQVEsRUFBRSxJQUFJO0tBQUU7SUFDNUN1QixNQUFNLEVBQUU7UUFBRTNCLElBQUksRUFBRTRCLE9BQU87UUFBRXhCLFFBQVEsRUFBRSxJQUFJO1FBQUV5QixPQUFPLEVBQUUsS0FBSztLQUFFO0lBQ3pEQyxXQUFXLEVBQUU7UUFBRTlCLElBQUksRUFBRTRCLE9BQU87UUFBRXhCLFFBQVEsRUFBRSxJQUFJO1FBQUV5QixPQUFPLEVBQUUsS0FBSztLQUFFO0lBQzlERSxNQUFNLEVBQUU7UUFBRS9CLElBQUksRUFBRWdDLElBQUk7S0FBRTtJQUN0QkMsV0FBVyxFQUFFO1FBQUVqQyxJQUFJLEVBQUVnQyxJQUFJO0tBQUU7Q0FDNUIsRUFDRDtJQUNFRSxVQUFVLEVBQUUsSUFBSTtDQUNqQixDQUNGO0FBRUQsTUFBTUMsS0FBSyxHQUFHdkMsOERBQXFCLElBQUlBLHFEQUFjLENBQUMsT0FBTyxFQUFFQyxXQUFXLENBQUM7QUFDM0UsaUVBQWVzQyxLQUFLLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXh0LXRhaWx3aW5kLWFtYXpvbmEvLi9tb2RlbHMvT3JkZXIuanM/ZWIyOSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgbW9uZ29vc2UgZnJvbSAnbW9uZ29vc2UnO1xyXG5cclxuY29uc3Qgb3JkZXJTY2hlbWEgPSBuZXcgbW9uZ29vc2UuU2NoZW1hKFxyXG4gIHtcclxuICAgIHVzZXI6IHsgdHlwZTogbW9uZ29vc2UuU2NoZW1hLlR5cGVzLk9iamVjdElkLCByZWY6ICdVc2VyJywgcmVxdWlyZWQ6IHRydWUgfSxcclxuICAgIG9yZGVySXRlbXM6IFtcclxuICAgICAge1xyXG4gICAgICAgIG5hbWU6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgICAgIHF1YW50aXR5OiB7IHR5cGU6IE51bWJlciwgcmVxdWlyZWQ6IHRydWUgfSxcclxuICAgICAgICBpbWFnZTogeyB0eXBlOiBTdHJpbmcsIHJlcXVpcmVkOiB0cnVlIH0sXHJcbiAgICAgICAgcHJpY2U6IHsgdHlwZTogTnVtYmVyLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgICB9LFxyXG4gICAgXSxcclxuICAgIHNoaXBwaW5nQWRkcmVzczoge1xyXG4gICAgICBmdWxsTmFtZTogeyB0eXBlOiBTdHJpbmcsIHJlcXVpcmVkOiB0cnVlIH0sXHJcbiAgICAgIGFkZHJlc3M6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgICBjaXR5OiB7IHR5cGU6IFN0cmluZywgcmVxdWlyZWQ6IHRydWUgfSxcclxuICAgICAgcG9zdGFsQ29kZTogeyB0eXBlOiBTdHJpbmcsIHJlcXVpcmVkOiB0cnVlIH0sXHJcbiAgICAgIGNvdW50cnk6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgfSxcclxuICAgIHBheW1lbnRNZXRob2Q6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgcGF5bWVudFJlc3VsdDogeyBpZDogU3RyaW5nLCBzdGF0dXM6IFN0cmluZywgZW1haWxfYWRkcmVzczogU3RyaW5nIH0sXHJcbiAgICBpdGVtc1ByaWNlOiB7IHR5cGU6IE51bWJlciwgcmVxdWlyZWQ6IHRydWUgfSxcclxuICAgIHNoaXBwaW5nUHJpY2U6IHsgdHlwZTogTnVtYmVyLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgdGF4UHJpY2U6IHsgdHlwZTogTnVtYmVyLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgdG90YWxQcmljZTogeyB0eXBlOiBOdW1iZXIsIHJlcXVpcmVkOiB0cnVlIH0sXHJcbiAgICBpc1BhaWQ6IHsgdHlwZTogQm9vbGVhbiwgcmVxdWlyZWQ6IHRydWUsIGRlZmF1bHQ6IGZhbHNlIH0sXHJcbiAgICBpc0RlbGl2ZXJlZDogeyB0eXBlOiBCb29sZWFuLCByZXF1aXJlZDogdHJ1ZSwgZGVmYXVsdDogZmFsc2UgfSxcclxuICAgIHBhaWRBdDogeyB0eXBlOiBEYXRlIH0sXHJcbiAgICBkZWxpdmVyZWRBdDogeyB0eXBlOiBEYXRlIH0sXHJcbiAgfSxcclxuICB7XHJcbiAgICB0aW1lc3RhbXBzOiB0cnVlLFxyXG4gIH1cclxuKTtcclxuXHJcbmNvbnN0IE9yZGVyID0gbW9uZ29vc2UubW9kZWxzLk9yZGVyIHx8IG1vbmdvb3NlLm1vZGVsKCdPcmRlcicsIG9yZGVyU2NoZW1hKTtcclxuZXhwb3J0IGRlZmF1bHQgT3JkZXI7XHJcbiJdLCJuYW1lcyI6WyJtb25nb29zZSIsIm9yZGVyU2NoZW1hIiwiU2NoZW1hIiwidXNlciIsInR5cGUiLCJUeXBlcyIsIk9iamVjdElkIiwicmVmIiwicmVxdWlyZWQiLCJvcmRlckl0ZW1zIiwibmFtZSIsIlN0cmluZyIsInF1YW50aXR5IiwiTnVtYmVyIiwiaW1hZ2UiLCJwcmljZSIsInNoaXBwaW5nQWRkcmVzcyIsImZ1bGxOYW1lIiwiYWRkcmVzcyIsImNpdHkiLCJwb3N0YWxDb2RlIiwiY291bnRyeSIsInBheW1lbnRNZXRob2QiLCJwYXltZW50UmVzdWx0IiwiaWQiLCJzdGF0dXMiLCJlbWFpbF9hZGRyZXNzIiwiaXRlbXNQcmljZSIsInNoaXBwaW5nUHJpY2UiLCJ0YXhQcmljZSIsInRvdGFsUHJpY2UiLCJpc1BhaWQiLCJCb29sZWFuIiwiZGVmYXVsdCIsImlzRGVsaXZlcmVkIiwicGFpZEF0IiwiRGF0ZSIsImRlbGl2ZXJlZEF0IiwidGltZXN0YW1wcyIsIk9yZGVyIiwibW9kZWxzIiwibW9kZWwiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./models/Order.js\n");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2663);
+/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);
+
+const userSchema = new (mongoose__WEBPACK_IMPORTED_MODULE_0___default().Schema)({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    isAdmin: {
+        type: Boolean,
+        required: true,
+        default: false
+    }
+}, {
+    timestamps: true
+});
+const User = (mongoose__WEBPACK_IMPORTED_MODULE_0___default().models.User) || mongoose__WEBPACK_IMPORTED_MODULE_0___default().model("User", userSchema);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (User);
+
 
 /***/ }),
 
-/***/ "(api)/./models/Product.js":
-/*!***************************!*\
-  !*** ./models/Product.js ***!
-  \***************************/
+/***/ 3686:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst productSchema = new (mongoose__WEBPACK_IMPORTED_MODULE_0___default().Schema)({\n    name: {\n        type: String,\n        required: true\n    },\n    slug: {\n        type: String,\n        required: true,\n        unique: true\n    },\n    category: {\n        type: String,\n        required: true\n    },\n    image: {\n        type: String,\n        required: true\n    },\n    price: {\n        type: Number,\n        required: true\n    },\n    brand: {\n        type: String,\n        required: true\n    },\n    rating: {\n        type: Number,\n        required: true,\n        default: 0\n    },\n    numReviews: {\n        type: Number,\n        required: true,\n        default: 0\n    },\n    countInStock: {\n        type: Number,\n        required: true,\n        default: 0\n    },\n    description: {\n        type: String,\n        required: true\n    },\n    isFeatured: {\n        type: Boolean,\n        default: false\n    },\n    banner: String\n}, {\n    timestamps: true\n});\nconst Product = (mongoose__WEBPACK_IMPORTED_MODULE_0___default().models.Product) || mongoose__WEBPACK_IMPORTED_MODULE_0___default().model(\"Product\", productSchema);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Product);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbHMvUHJvZHVjdC5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBZ0M7QUFFaEMsTUFBTUMsYUFBYSxHQUFHLElBQUlELHdEQUFlLENBQ3ZDO0lBQ0VHLElBQUksRUFBRTtRQUFFQyxJQUFJLEVBQUVDLE1BQU07UUFBRUMsUUFBUSxFQUFFLElBQUk7S0FBRTtJQUN0Q0MsSUFBSSxFQUFFO1FBQUVILElBQUksRUFBRUMsTUFBTTtRQUFFQyxRQUFRLEVBQUUsSUFBSTtRQUFFRSxNQUFNLEVBQUUsSUFBSTtLQUFFO0lBQ3BEQyxRQUFRLEVBQUU7UUFBRUwsSUFBSSxFQUFFQyxNQUFNO1FBQUVDLFFBQVEsRUFBRSxJQUFJO0tBQUU7SUFDMUNJLEtBQUssRUFBRTtRQUFFTixJQUFJLEVBQUVDLE1BQU07UUFBRUMsUUFBUSxFQUFFLElBQUk7S0FBRTtJQUN2Q0ssS0FBSyxFQUFFO1FBQUVQLElBQUksRUFBRVEsTUFBTTtRQUFFTixRQUFRLEVBQUUsSUFBSTtLQUFFO0lBQ3ZDTyxLQUFLLEVBQUU7UUFBRVQsSUFBSSxFQUFFQyxNQUFNO1FBQUVDLFFBQVEsRUFBRSxJQUFJO0tBQUU7SUFDdkNRLE1BQU0sRUFBRTtRQUFFVixJQUFJLEVBQUVRLE1BQU07UUFBRU4sUUFBUSxFQUFFLElBQUk7UUFBRVMsT0FBTyxFQUFFLENBQUM7S0FBRTtJQUNwREMsVUFBVSxFQUFFO1FBQUVaLElBQUksRUFBRVEsTUFBTTtRQUFFTixRQUFRLEVBQUUsSUFBSTtRQUFFUyxPQUFPLEVBQUUsQ0FBQztLQUFFO0lBQ3hERSxZQUFZLEVBQUU7UUFBRWIsSUFBSSxFQUFFUSxNQUFNO1FBQUVOLFFBQVEsRUFBRSxJQUFJO1FBQUVTLE9BQU8sRUFBRSxDQUFDO0tBQUU7SUFDMURHLFdBQVcsRUFBRTtRQUFFZCxJQUFJLEVBQUVDLE1BQU07UUFBRUMsUUFBUSxFQUFFLElBQUk7S0FBRTtJQUM3Q2EsVUFBVSxFQUFFO1FBQUVmLElBQUksRUFBRWdCLE9BQU87UUFBRUwsT0FBTyxFQUFFLEtBQUs7S0FBRTtJQUM3Q00sTUFBTSxFQUFFaEIsTUFBTTtDQUNmLEVBQ0Q7SUFDRWlCLFVBQVUsRUFBRSxJQUFJO0NBQ2pCLENBQ0Y7QUFFRCxNQUFNQyxPQUFPLEdBQ1h2QixnRUFBdUIsSUFBSUEscURBQWMsQ0FBQyxTQUFTLEVBQUVDLGFBQWEsQ0FBQztBQUNyRSxpRUFBZXNCLE9BQU8sRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL25leHQtdGFpbHdpbmQtYW1hem9uYS8uL21vZGVscy9Qcm9kdWN0LmpzPzA5YzYiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IG1vbmdvb3NlIGZyb20gXCJtb25nb29zZVwiO1xyXG5cclxuY29uc3QgcHJvZHVjdFNjaGVtYSA9IG5ldyBtb25nb29zZS5TY2hlbWEoXHJcbiAge1xyXG4gICAgbmFtZTogeyB0eXBlOiBTdHJpbmcsIHJlcXVpcmVkOiB0cnVlIH0sXHJcbiAgICBzbHVnOiB7IHR5cGU6IFN0cmluZywgcmVxdWlyZWQ6IHRydWUsIHVuaXF1ZTogdHJ1ZSB9LFxyXG4gICAgY2F0ZWdvcnk6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgaW1hZ2U6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgcHJpY2U6IHsgdHlwZTogTnVtYmVyLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgYnJhbmQ6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgcmF0aW5nOiB7IHR5cGU6IE51bWJlciwgcmVxdWlyZWQ6IHRydWUsIGRlZmF1bHQ6IDAgfSxcclxuICAgIG51bVJldmlld3M6IHsgdHlwZTogTnVtYmVyLCByZXF1aXJlZDogdHJ1ZSwgZGVmYXVsdDogMCB9LFxyXG4gICAgY291bnRJblN0b2NrOiB7IHR5cGU6IE51bWJlciwgcmVxdWlyZWQ6IHRydWUsIGRlZmF1bHQ6IDAgfSxcclxuICAgIGRlc2NyaXB0aW9uOiB7IHR5cGU6IFN0cmluZywgcmVxdWlyZWQ6IHRydWUgfSxcclxuICAgIGlzRmVhdHVyZWQ6IHsgdHlwZTogQm9vbGVhbiwgZGVmYXVsdDogZmFsc2UgfSxcclxuICAgIGJhbm5lcjogU3RyaW5nLFxyXG4gIH0sXHJcbiAge1xyXG4gICAgdGltZXN0YW1wczogdHJ1ZSxcclxuICB9XHJcbik7XHJcblxyXG5jb25zdCBQcm9kdWN0ID1cclxuICBtb25nb29zZS5tb2RlbHMuUHJvZHVjdCB8fCBtb25nb29zZS5tb2RlbChcIlByb2R1Y3RcIiwgcHJvZHVjdFNjaGVtYSk7XHJcbmV4cG9ydCBkZWZhdWx0IFByb2R1Y3Q7XHJcbiJdLCJuYW1lcyI6WyJtb25nb29zZSIsInByb2R1Y3RTY2hlbWEiLCJTY2hlbWEiLCJuYW1lIiwidHlwZSIsIlN0cmluZyIsInJlcXVpcmVkIiwic2x1ZyIsInVuaXF1ZSIsImNhdGVnb3J5IiwiaW1hZ2UiLCJwcmljZSIsIk51bWJlciIsImJyYW5kIiwicmF0aW5nIiwiZGVmYXVsdCIsIm51bVJldmlld3MiLCJjb3VudEluU3RvY2siLCJkZXNjcmlwdGlvbiIsImlzRmVhdHVyZWQiLCJCb29sZWFuIiwiYmFubmVyIiwidGltZXN0YW1wcyIsIlByb2R1Y3QiLCJtb2RlbHMiLCJtb2RlbCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./models/Product.js\n");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1649);
+/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_auth_react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _models_Order__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(53);
+/* harmony import */ var _models_Product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9442);
+/* harmony import */ var _models_User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6274);
+/* harmony import */ var _utils_db__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8989);
 
-/***/ }),
 
-/***/ "(api)/./models/User.js":
-/*!************************!*\
-  !*** ./models/User.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst userSchema = new (mongoose__WEBPACK_IMPORTED_MODULE_0___default().Schema)({\n    name: {\n        type: String,\n        required: true\n    },\n    email: {\n        type: String,\n        required: true,\n        unique: true\n    },\n    password: {\n        type: String,\n        required: true\n    },\n    isAdmin: {\n        type: Boolean,\n        required: true,\n        default: false\n    }\n}, {\n    timestamps: true\n});\nconst User = (mongoose__WEBPACK_IMPORTED_MODULE_0___default().models.User) || mongoose__WEBPACK_IMPORTED_MODULE_0___default().model(\"User\", userSchema);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (User);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbHMvVXNlci5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBZ0M7QUFFaEMsTUFBTUMsVUFBVSxHQUFHLElBQUlELHdEQUFlLENBQ3BDO0lBQ0VHLElBQUksRUFBRTtRQUFFQyxJQUFJLEVBQUVDLE1BQU07UUFBRUMsUUFBUSxFQUFFLElBQUk7S0FBRTtJQUN0Q0MsS0FBSyxFQUFFO1FBQUVILElBQUksRUFBRUMsTUFBTTtRQUFFQyxRQUFRLEVBQUUsSUFBSTtRQUFFRSxNQUFNLEVBQUUsSUFBSTtLQUFFO0lBQ3JEQyxRQUFRLEVBQUU7UUFBRUwsSUFBSSxFQUFFQyxNQUFNO1FBQUVDLFFBQVEsRUFBRSxJQUFJO0tBQUU7SUFDMUNJLE9BQU8sRUFBRTtRQUFFTixJQUFJLEVBQUVPLE9BQU87UUFBRUwsUUFBUSxFQUFFLElBQUk7UUFBRU0sT0FBTyxFQUFFLEtBQUs7S0FBRTtDQUMzRCxFQUNEO0lBQ0VDLFVBQVUsRUFBRSxJQUFJO0NBQ2pCLENBQ0Y7QUFFRCxNQUFNQyxJQUFJLEdBQUdkLDZEQUFvQixJQUFJQSxxREFBYyxDQUFDLE1BQU0sRUFBRUMsVUFBVSxDQUFDO0FBQ3ZFLGlFQUFlYSxJQUFJLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXh0LXRhaWx3aW5kLWFtYXpvbmEvLi9tb2RlbHMvVXNlci5qcz83MzY3Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBtb25nb29zZSBmcm9tICdtb25nb29zZSc7XHJcblxyXG5jb25zdCB1c2VyU2NoZW1hID0gbmV3IG1vbmdvb3NlLlNjaGVtYShcclxuICB7XHJcbiAgICBuYW1lOiB7IHR5cGU6IFN0cmluZywgcmVxdWlyZWQ6IHRydWUgfSxcclxuICAgIGVtYWlsOiB7IHR5cGU6IFN0cmluZywgcmVxdWlyZWQ6IHRydWUsIHVuaXF1ZTogdHJ1ZSB9LFxyXG4gICAgcGFzc3dvcmQ6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgaXNBZG1pbjogeyB0eXBlOiBCb29sZWFuLCByZXF1aXJlZDogdHJ1ZSwgZGVmYXVsdDogZmFsc2UgfSxcclxuICB9LFxyXG4gIHtcclxuICAgIHRpbWVzdGFtcHM6IHRydWUsXHJcbiAgfVxyXG4pO1xyXG5cclxuY29uc3QgVXNlciA9IG1vbmdvb3NlLm1vZGVscy5Vc2VyIHx8IG1vbmdvb3NlLm1vZGVsKCdVc2VyJywgdXNlclNjaGVtYSk7XHJcbmV4cG9ydCBkZWZhdWx0IFVzZXI7XHJcbiJdLCJuYW1lcyI6WyJtb25nb29zZSIsInVzZXJTY2hlbWEiLCJTY2hlbWEiLCJuYW1lIiwidHlwZSIsIlN0cmluZyIsInJlcXVpcmVkIiwiZW1haWwiLCJ1bmlxdWUiLCJwYXNzd29yZCIsImlzQWRtaW4iLCJCb29sZWFuIiwiZGVmYXVsdCIsInRpbWVzdGFtcHMiLCJVc2VyIiwibW9kZWxzIiwibW9kZWwiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./models/User.js\n");
 
-/***/ }),
 
-/***/ "(api)/./pages/api/admin/summary.js":
-/*!************************************!*\
-  !*** ./pages/api/admin/summary.js ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+const handler = async (req, res)=>{
+    const session = await (0,next_auth_react__WEBPACK_IMPORTED_MODULE_0__.getSession)({
+        req
+    });
+    console.log(session);
+    if (!session || session && !session.user.isAdmin) {
+        return res.status(401).send("signin required");
+    }
+    await _utils_db__WEBPACK_IMPORTED_MODULE_4__/* ["default"].connect */ .Z.connect();
+    const ordersCount = await _models_Order__WEBPACK_IMPORTED_MODULE_1__/* ["default"].countDocuments */ .Z.countDocuments();
+    const productsCount = await _models_Product__WEBPACK_IMPORTED_MODULE_2__/* ["default"].countDocuments */ .Z.countDocuments();
+    const usersCount = await _models_User__WEBPACK_IMPORTED_MODULE_3__/* ["default"].countDocuments */ .Z.countDocuments();
+    const ordersPriceGroup = await _models_Order__WEBPACK_IMPORTED_MODULE_1__/* ["default"].aggregate */ .Z.aggregate([
+        {
+            $group: {
+                _id: null,
+                sales: {
+                    $sum: "$totalPrice"
+                }
+            }
+        }, 
+    ]);
+    const ordersPrice = ordersPriceGroup.length > 0 ? ordersPriceGroup[0].sales : 0;
+    const salesData = await _models_Order__WEBPACK_IMPORTED_MODULE_1__/* ["default"].aggregate */ .Z.aggregate([
+        {
+            $group: {
+                _id: {
+                    $dateToString: {
+                        format: "%Y-%m",
+                        date: "$createdAt"
+                    }
+                },
+                totalSales: {
+                    $sum: "$totalPrice"
+                }
+            }
+        }, 
+    ]);
+    await _utils_db__WEBPACK_IMPORTED_MODULE_4__/* ["default"].disconnect */ .Z.disconnect();
+    res.send({
+        ordersCount,
+        productsCount,
+        usersCount,
+        ordersPrice,
+        salesData
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handler);
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next-auth/react */ \"next-auth/react\");\n/* harmony import */ var next_auth_react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_auth_react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _models_Order__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../models/Order */ \"(api)/./models/Order.js\");\n/* harmony import */ var _models_Product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../models/Product */ \"(api)/./models/Product.js\");\n/* harmony import */ var _models_User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../models/User */ \"(api)/./models/User.js\");\n/* harmony import */ var _utils_db__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utils/db */ \"(api)/./utils/db.js\");\n\n\n\n\n\nconst handler = async (req, res)=>{\n    const session = await (0,next_auth_react__WEBPACK_IMPORTED_MODULE_0__.getSession)({\n        req\n    });\n    console.log(session);\n    if (!session || session && !session.user.isAdmin) {\n        return res.status(401).send(\"signin required\");\n    }\n    await _utils_db__WEBPACK_IMPORTED_MODULE_4__[\"default\"].connect();\n    const ordersCount = await _models_Order__WEBPACK_IMPORTED_MODULE_1__[\"default\"].countDocuments();\n    const productsCount = await _models_Product__WEBPACK_IMPORTED_MODULE_2__[\"default\"].countDocuments();\n    const usersCount = await _models_User__WEBPACK_IMPORTED_MODULE_3__[\"default\"].countDocuments();\n    const ordersPriceGroup = await _models_Order__WEBPACK_IMPORTED_MODULE_1__[\"default\"].aggregate([\n        {\n            $group: {\n                _id: null,\n                sales: {\n                    $sum: \"$totalPrice\"\n                }\n            }\n        }, \n    ]);\n    const ordersPrice = ordersPriceGroup.length > 0 ? ordersPriceGroup[0].sales : 0;\n    const salesData = await _models_Order__WEBPACK_IMPORTED_MODULE_1__[\"default\"].aggregate([\n        {\n            $group: {\n                _id: {\n                    $dateToString: {\n                        format: \"%Y-%m\",\n                        date: \"$createdAt\"\n                    }\n                },\n                totalSales: {\n                    $sum: \"$totalPrice\"\n                }\n            }\n        }, \n    ]);\n    await _utils_db__WEBPACK_IMPORTED_MODULE_4__[\"default\"].disconnect();\n    res.send({\n        ordersCount,\n        productsCount,\n        usersCount,\n        ordersPrice,\n        salesData\n    });\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handler);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvYWRtaW4vc3VtbWFyeS5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7O0FBQTZDO0FBQ0g7QUFDSTtBQUNOO0FBQ0w7QUFFbkMsTUFBTUssT0FBTyxHQUFHLE9BQU9DLEdBQUcsRUFBRUMsR0FBRyxHQUFLO0lBQ2xDLE1BQU1DLE9BQU8sR0FBRyxNQUFNUiwyREFBVSxDQUFDO1FBQUVNLEdBQUc7S0FBRSxDQUFDO0lBQ3pDRyxPQUFPLENBQUNDLEdBQUcsQ0FBQ0YsT0FBTyxDQUFDLENBQUM7SUFDckIsSUFBSSxDQUFDQSxPQUFPLElBQUtBLE9BQU8sSUFBSSxDQUFDQSxPQUFPLENBQUNHLElBQUksQ0FBQ0MsT0FBTyxFQUFHO1FBQ2xELE9BQU9MLEdBQUcsQ0FBQ00sTUFBTSxDQUFDLEdBQUcsQ0FBQyxDQUFDQyxJQUFJLENBQUMsaUJBQWlCLENBQUMsQ0FBQztLQUNoRDtJQUVELE1BQU1WLHlEQUFVLEVBQUUsQ0FBQztJQUVuQixNQUFNWSxXQUFXLEdBQUcsTUFBTWYsb0VBQW9CLEVBQUU7SUFDaEQsTUFBTWlCLGFBQWEsR0FBRyxNQUFNaEIsc0VBQXNCLEVBQUU7SUFDcEQsTUFBTWlCLFVBQVUsR0FBRyxNQUFNaEIsbUVBQW1CLEVBQUU7SUFFOUMsTUFBTWlCLGdCQUFnQixHQUFHLE1BQU1uQiwrREFBZSxDQUFDO1FBQzdDO1lBQ0VxQixNQUFNLEVBQUU7Z0JBQ05DLEdBQUcsRUFBRSxJQUFJO2dCQUNUQyxLQUFLLEVBQUU7b0JBQUVDLElBQUksRUFBRSxhQUFhO2lCQUFFO2FBQy9CO1NBQ0Y7S0FDRixDQUFDO0lBQ0YsTUFBTUMsV0FBVyxHQUNmTixnQkFBZ0IsQ0FBQ08sTUFBTSxHQUFHLENBQUMsR0FBR1AsZ0JBQWdCLENBQUMsQ0FBQyxDQUFDLENBQUNJLEtBQUssR0FBRyxDQUFDO0lBRTdELE1BQU1JLFNBQVMsR0FBRyxNQUFNM0IsK0RBQWUsQ0FBQztRQUN0QztZQUNFcUIsTUFBTSxFQUFFO2dCQUNOQyxHQUFHLEVBQUU7b0JBQUVNLGFBQWEsRUFBRTt3QkFBRUMsTUFBTSxFQUFFLE9BQU87d0JBQUVDLElBQUksRUFBRSxZQUFZO3FCQUFFO2lCQUFFO2dCQUMvREMsVUFBVSxFQUFFO29CQUFFUCxJQUFJLEVBQUUsYUFBYTtpQkFBRTthQUNwQztTQUNGO0tBQ0YsQ0FBQztJQUVGLE1BQU1yQiw0REFBYSxFQUFFLENBQUM7SUFDdEJHLEdBQUcsQ0FBQ08sSUFBSSxDQUFDO1FBQUVFLFdBQVc7UUFBRUUsYUFBYTtRQUFFQyxVQUFVO1FBQUVPLFdBQVc7UUFBRUUsU0FBUztLQUFFLENBQUMsQ0FBQztDQUM5RTtBQUVELGlFQUFldkIsT0FBTyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV4dC10YWlsd2luZC1hbWF6b25hLy4vcGFnZXMvYXBpL2FkbWluL3N1bW1hcnkuanM/ZWVjZCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBnZXRTZXNzaW9uIH0gZnJvbSAnbmV4dC1hdXRoL3JlYWN0JztcclxuaW1wb3J0IE9yZGVyIGZyb20gJy4uLy4uLy4uL21vZGVscy9PcmRlcic7XHJcbmltcG9ydCBQcm9kdWN0IGZyb20gJy4uLy4uLy4uL21vZGVscy9Qcm9kdWN0JztcclxuaW1wb3J0IFVzZXIgZnJvbSAnLi4vLi4vLi4vbW9kZWxzL1VzZXInO1xyXG5pbXBvcnQgZGIgZnJvbSAnLi4vLi4vLi4vdXRpbHMvZGInO1xyXG5cclxuY29uc3QgaGFuZGxlciA9IGFzeW5jIChyZXEsIHJlcykgPT4ge1xyXG4gIGNvbnN0IHNlc3Npb24gPSBhd2FpdCBnZXRTZXNzaW9uKHsgcmVxIH0pO1xyXG4gIGNvbnNvbGUubG9nKHNlc3Npb24pO1xyXG4gIGlmICghc2Vzc2lvbiB8fCAoc2Vzc2lvbiAmJiAhc2Vzc2lvbi51c2VyLmlzQWRtaW4pKSB7XHJcbiAgICByZXR1cm4gcmVzLnN0YXR1cyg0MDEpLnNlbmQoJ3NpZ25pbiByZXF1aXJlZCcpO1xyXG4gIH1cclxuXHJcbiAgYXdhaXQgZGIuY29ubmVjdCgpO1xyXG5cclxuICBjb25zdCBvcmRlcnNDb3VudCA9IGF3YWl0IE9yZGVyLmNvdW50RG9jdW1lbnRzKCk7XHJcbiAgY29uc3QgcHJvZHVjdHNDb3VudCA9IGF3YWl0IFByb2R1Y3QuY291bnREb2N1bWVudHMoKTtcclxuICBjb25zdCB1c2Vyc0NvdW50ID0gYXdhaXQgVXNlci5jb3VudERvY3VtZW50cygpO1xyXG5cclxuICBjb25zdCBvcmRlcnNQcmljZUdyb3VwID0gYXdhaXQgT3JkZXIuYWdncmVnYXRlKFtcclxuICAgIHtcclxuICAgICAgJGdyb3VwOiB7XHJcbiAgICAgICAgX2lkOiBudWxsLFxyXG4gICAgICAgIHNhbGVzOiB7ICRzdW06ICckdG90YWxQcmljZScgfSxcclxuICAgICAgfSxcclxuICAgIH0sXHJcbiAgXSk7XHJcbiAgY29uc3Qgb3JkZXJzUHJpY2UgPVxyXG4gICAgb3JkZXJzUHJpY2VHcm91cC5sZW5ndGggPiAwID8gb3JkZXJzUHJpY2VHcm91cFswXS5zYWxlcyA6IDA7XHJcblxyXG4gIGNvbnN0IHNhbGVzRGF0YSA9IGF3YWl0IE9yZGVyLmFnZ3JlZ2F0ZShbXHJcbiAgICB7XHJcbiAgICAgICRncm91cDoge1xyXG4gICAgICAgIF9pZDogeyAkZGF0ZVRvU3RyaW5nOiB7IGZvcm1hdDogJyVZLSVtJywgZGF0ZTogJyRjcmVhdGVkQXQnIH0gfSxcclxuICAgICAgICB0b3RhbFNhbGVzOiB7ICRzdW06ICckdG90YWxQcmljZScgfSxcclxuICAgICAgfSxcclxuICAgIH0sXHJcbiAgXSk7XHJcblxyXG4gIGF3YWl0IGRiLmRpc2Nvbm5lY3QoKTtcclxuICByZXMuc2VuZCh7IG9yZGVyc0NvdW50LCBwcm9kdWN0c0NvdW50LCB1c2Vyc0NvdW50LCBvcmRlcnNQcmljZSwgc2FsZXNEYXRhIH0pO1xyXG59O1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgaGFuZGxlcjtcclxuIl0sIm5hbWVzIjpbImdldFNlc3Npb24iLCJPcmRlciIsIlByb2R1Y3QiLCJVc2VyIiwiZGIiLCJoYW5kbGVyIiwicmVxIiwicmVzIiwic2Vzc2lvbiIsImNvbnNvbGUiLCJsb2ciLCJ1c2VyIiwiaXNBZG1pbiIsInN0YXR1cyIsInNlbmQiLCJjb25uZWN0Iiwib3JkZXJzQ291bnQiLCJjb3VudERvY3VtZW50cyIsInByb2R1Y3RzQ291bnQiLCJ1c2Vyc0NvdW50Iiwib3JkZXJzUHJpY2VHcm91cCIsImFnZ3JlZ2F0ZSIsIiRncm91cCIsIl9pZCIsInNhbGVzIiwiJHN1bSIsIm9yZGVyc1ByaWNlIiwibGVuZ3RoIiwic2FsZXNEYXRhIiwiJGRhdGVUb1N0cmluZyIsImZvcm1hdCIsImRhdGUiLCJ0b3RhbFNhbGVzIiwiZGlzY29ubmVjdCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./pages/api/admin/summary.js\n");
-
-/***/ }),
-
-/***/ "(api)/./utils/db.js":
-/*!*********************!*\
-  !*** ./utils/db.js ***!
-  \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst connection = {};\nasync function connect() {\n    if (connection.isConnected) {\n        console.log(\"already connected\");\n        return;\n    }\n    if ((mongoose__WEBPACK_IMPORTED_MODULE_0___default().connections.length) > 0) {\n        connection.isConnected = (mongoose__WEBPACK_IMPORTED_MODULE_0___default().connections[0].readyState);\n        if (connection.isConnected === 1) {\n            console.log(\"use previous connection\");\n            return;\n        }\n        await mongoose__WEBPACK_IMPORTED_MODULE_0___default().disconnect();\n    }\n    const db1 = await mongoose__WEBPACK_IMPORTED_MODULE_0___default().connect(process.env.MONGODB_URI);\n    console.log(\"new connection\");\n    connection.isConnected = db1.connections[0].readyState;\n}\nasync function disconnect() {\n    if (connection.isConnected) {\n        if (false) {} else {\n            console.log(\"not disconnected\");\n        }\n    }\n}\nfunction convertDocToObj(doc) {\n    doc._id = doc._id.toString();\n    doc.createdAt = doc.createdAt.toString();\n    doc.updatedAt = doc.updatedAt.toString();\n    return doc;\n}\nconst db = {\n    connect,\n    disconnect,\n    convertDocToObj\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (db);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi91dGlscy9kYi5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBZ0M7QUFFaEMsTUFBTUMsVUFBVSxHQUFHLEVBQUU7QUFFckIsZUFBZUMsT0FBTyxHQUFHO0lBQ3ZCLElBQUlELFVBQVUsQ0FBQ0UsV0FBVyxFQUFFO1FBQzFCQyxPQUFPLENBQUNDLEdBQUcsQ0FBQyxtQkFBbUIsQ0FBQyxDQUFDO1FBQ2pDLE9BQU87S0FDUjtJQUNELElBQUlMLG9FQUEyQixHQUFHLENBQUMsRUFBRTtRQUNuQ0MsVUFBVSxDQUFDRSxXQUFXLEdBQUdILDJFQUFrQyxDQUFDO1FBQzVELElBQUlDLFVBQVUsQ0FBQ0UsV0FBVyxLQUFLLENBQUMsRUFBRTtZQUNoQ0MsT0FBTyxDQUFDQyxHQUFHLENBQUMseUJBQXlCLENBQUMsQ0FBQztZQUN2QyxPQUFPO1NBQ1I7UUFDRCxNQUFNTCwwREFBbUIsRUFBRSxDQUFDO0tBQzdCO0lBQ0QsTUFBTVUsR0FBRSxHQUFHLE1BQU1WLHVEQUFnQixDQUFDVyxPQUFPLENBQUNDLEdBQUcsQ0FBQ0MsV0FBVyxDQUFDO0lBQzFEVCxPQUFPLENBQUNDLEdBQUcsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDO0lBQzlCSixVQUFVLENBQUNFLFdBQVcsR0FBR08sR0FBRSxDQUFDSixXQUFXLENBQUMsQ0FBQyxDQUFDLENBQUNFLFVBQVUsQ0FBQztDQUN2RDtBQUVELGVBQWVDLFVBQVUsR0FBRztJQUMxQixJQUFJUixVQUFVLENBQUNFLFdBQVcsRUFBRTtRQUMxQixJQUFJUSxLQUFxQyxFQUFFLEVBRzFDLE1BQU07WUFDTFAsT0FBTyxDQUFDQyxHQUFHLENBQUMsa0JBQWtCLENBQUMsQ0FBQztTQUNqQztLQUNGO0NBQ0Y7QUFDRCxTQUFTUyxlQUFlLENBQUNDLEdBQUcsRUFBRTtJQUM1QkEsR0FBRyxDQUFDQyxHQUFHLEdBQUdELEdBQUcsQ0FBQ0MsR0FBRyxDQUFDQyxRQUFRLEVBQUUsQ0FBQztJQUM3QkYsR0FBRyxDQUFDRyxTQUFTLEdBQUdILEdBQUcsQ0FBQ0csU0FBUyxDQUFDRCxRQUFRLEVBQUUsQ0FBQztJQUN6Q0YsR0FBRyxDQUFDSSxTQUFTLEdBQUdKLEdBQUcsQ0FBQ0ksU0FBUyxDQUFDRixRQUFRLEVBQUUsQ0FBQztJQUN6QyxPQUFPRixHQUFHLENBQUM7Q0FDWjtBQUVELE1BQU1MLEVBQUUsR0FBRztJQUFFUixPQUFPO0lBQUVPLFVBQVU7SUFBRUssZUFBZTtDQUFFO0FBQ25ELGlFQUFlSixFQUFFLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXh0LXRhaWx3aW5kLWFtYXpvbmEvLi91dGlscy9kYi5qcz83Y2IyIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBtb25nb29zZSBmcm9tICdtb25nb29zZSc7XHJcblxyXG5jb25zdCBjb25uZWN0aW9uID0ge307XHJcblxyXG5hc3luYyBmdW5jdGlvbiBjb25uZWN0KCkge1xyXG4gIGlmIChjb25uZWN0aW9uLmlzQ29ubmVjdGVkKSB7XHJcbiAgICBjb25zb2xlLmxvZygnYWxyZWFkeSBjb25uZWN0ZWQnKTtcclxuICAgIHJldHVybjtcclxuICB9XHJcbiAgaWYgKG1vbmdvb3NlLmNvbm5lY3Rpb25zLmxlbmd0aCA+IDApIHtcclxuICAgIGNvbm5lY3Rpb24uaXNDb25uZWN0ZWQgPSBtb25nb29zZS5jb25uZWN0aW9uc1swXS5yZWFkeVN0YXRlO1xyXG4gICAgaWYgKGNvbm5lY3Rpb24uaXNDb25uZWN0ZWQgPT09IDEpIHtcclxuICAgICAgY29uc29sZS5sb2coJ3VzZSBwcmV2aW91cyBjb25uZWN0aW9uJyk7XHJcbiAgICAgIHJldHVybjtcclxuICAgIH1cclxuICAgIGF3YWl0IG1vbmdvb3NlLmRpc2Nvbm5lY3QoKTtcclxuICB9XHJcbiAgY29uc3QgZGIgPSBhd2FpdCBtb25nb29zZS5jb25uZWN0KHByb2Nlc3MuZW52Lk1PTkdPREJfVVJJKTtcclxuICBjb25zb2xlLmxvZygnbmV3IGNvbm5lY3Rpb24nKTtcclxuICBjb25uZWN0aW9uLmlzQ29ubmVjdGVkID0gZGIuY29ubmVjdGlvbnNbMF0ucmVhZHlTdGF0ZTtcclxufVxyXG5cclxuYXN5bmMgZnVuY3Rpb24gZGlzY29ubmVjdCgpIHtcclxuICBpZiAoY29ubmVjdGlvbi5pc0Nvbm5lY3RlZCkge1xyXG4gICAgaWYgKHByb2Nlc3MuZW52Lk5PREVfRU5WID09PSAncHJvZHVjdGlvbicpIHtcclxuICAgICAgYXdhaXQgbW9uZ29vc2UuZGlzY29ubmVjdCgpO1xyXG4gICAgICBjb25uZWN0aW9uLmlzQ29ubmVjdGVkID0gZmFsc2U7XHJcbiAgICB9IGVsc2Uge1xyXG4gICAgICBjb25zb2xlLmxvZygnbm90IGRpc2Nvbm5lY3RlZCcpO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG5mdW5jdGlvbiBjb252ZXJ0RG9jVG9PYmooZG9jKSB7XHJcbiAgZG9jLl9pZCA9IGRvYy5faWQudG9TdHJpbmcoKTtcclxuICBkb2MuY3JlYXRlZEF0ID0gZG9jLmNyZWF0ZWRBdC50b1N0cmluZygpO1xyXG4gIGRvYy51cGRhdGVkQXQgPSBkb2MudXBkYXRlZEF0LnRvU3RyaW5nKCk7XHJcbiAgcmV0dXJuIGRvYztcclxufVxyXG5cclxuY29uc3QgZGIgPSB7IGNvbm5lY3QsIGRpc2Nvbm5lY3QsIGNvbnZlcnREb2NUb09iaiB9O1xyXG5leHBvcnQgZGVmYXVsdCBkYjtcclxuIl0sIm5hbWVzIjpbIm1vbmdvb3NlIiwiY29ubmVjdGlvbiIsImNvbm5lY3QiLCJpc0Nvbm5lY3RlZCIsImNvbnNvbGUiLCJsb2ciLCJjb25uZWN0aW9ucyIsImxlbmd0aCIsInJlYWR5U3RhdGUiLCJkaXNjb25uZWN0IiwiZGIiLCJwcm9jZXNzIiwiZW52IiwiTU9OR09EQl9VUkkiLCJjb252ZXJ0RG9jVG9PYmoiLCJkb2MiLCJfaWQiLCJ0b1N0cmluZyIsImNyZWF0ZWRBdCIsInVwZGF0ZWRBdCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./utils/db.js\n");
 
 /***/ })
 
@@ -90,7 +133,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/admin/summary.js"));
+var __webpack_exports__ = __webpack_require__.X(0, [8989,53,9442], () => (__webpack_exec__(3686)));
 module.exports = __webpack_exports__;
 
 })();
