@@ -58,7 +58,7 @@ export default function ShippingScreen() {
       >
         <h1 className="mb-4 text-xl">Adresse de livraison</h1>
         <div className="mb-4">
-          <label htmlFor="fullName">Nom et Prénom</label>
+          <label htmlFor="fullName">Prénom et Nom</label>
           <input
             className="w-full"
             id="fullName"

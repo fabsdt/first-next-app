@@ -76,7 +76,7 @@ export default function Layout({ title, children }) {
             </form>
             <div className='flex'>
               <Link href="/cart">
-                <a className="p-2">
+                <a className="p-2 flex">
                 <ShoppingCartIcon />
                   
                   {cartItemsCount > 0 && (
@@ -86,7 +86,7 @@ export default function Layout({ title, children }) {
                   )}
                 </a>
               </Link>
-              &nbsp;&nbsp;
+             
 
               {status === 'loading' ? (
                 'Loading'

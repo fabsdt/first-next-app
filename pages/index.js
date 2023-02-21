@@ -25,7 +25,7 @@ export default function Home({ products, featuredProducts }) {
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
 
     toast.success('Article ajouté au panier');
-  };
+  };  
 
   return (
     <Layout title="Page d'accueil">
@@ -40,7 +40,7 @@ export default function Home({ products, featuredProducts }) {
           </div>
         ))}
       </Carousel>
-      <h2 className="h2 my-4">Notre sélection</h2>
+      <h2 className="h2 my-4">Premier site français d'asic !</h2>      
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <ProductItem
