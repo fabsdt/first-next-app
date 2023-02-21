@@ -50,10 +50,10 @@ export default function LoginScreen() {
           <input
             type="email"
             {...register('email', {
-              required: 'Please enter email',
+              required: 'Veuillez entrer un email valide',
               pattern: {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
-                message: 'Please enter valid email',
+                message: 'Veuillez entrer un email valide',
               },
             })}
             className="w-full"

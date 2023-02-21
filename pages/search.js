@@ -96,7 +96,7 @@ export default function Search(props) {
   };
 
   return (
-    <Layout title="recherche">
+    <Layout title="rechercher">
       <div className="grid md:grid-cols-4 md:gap-5">
         <div>
           <div className="my-3">

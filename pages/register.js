@@ -61,7 +61,7 @@ export default function LoginScreen() {
             id="name"
             autoFocus
             {...register('name', {
-              required: 'Please enter name',
+              required: "Veuillez entrer un nom d'utilisateur",
             })}
           />
           {errors.name && (
@@ -74,10 +74,10 @@ export default function LoginScreen() {
           <input
             type="email"
             {...register('email', {
-              required: 'Please enter email',
+              required: 'Veuillez entrer un email valide',
               pattern: {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
-                message: 'Please enter valid email',
+                message: 'Veuillez entrer un email valide',
               },
             })}
             className="w-full"
@@ -92,8 +92,8 @@ export default function LoginScreen() {
           <input
             type="password"
             {...register('password', {
-              required: 'Please enter password',
-              minLength: { value: 6, message: 'password is more than 5 chars' },
+              required: 'Veuillez entrer un mot de passe',
+              minLength: { value: 6, message: 'Mot de passe doit comporter au moins 6 charactères' },
             })}
             className="w-full"
             id="password"
@@ -110,11 +110,11 @@ export default function LoginScreen() {
             type="password"
             id="confirmPassword"
             {...register('confirmPassword', {
-              required: 'Please enter confirm password',
+              required: 'Veuillez confirmer votre mot de passe',
               validate: (value) => value === getValues('password'),
               minLength: {
                 value: 6,
-                message: 'confirm password is more than 5 chars',
+                message: 'Mot de passe doit comporter au moins 6 charactères',
               },
             })}
           />
