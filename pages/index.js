@@ -28,7 +28,7 @@ export default function Home({ products, featuredProducts }) {
   };  
 
   return (
-    <Layout title="Page d'accueil">
+    <Layout title="Miner Shop">
       <Carousel showThumbs={false} autoPlay>
         {featuredProducts.map((product) => (
           <div key={product._id}>
@@ -40,7 +40,7 @@ export default function Home({ products, featuredProducts }) {
           </div>
         ))}
       </Carousel>
-      <h2 className="h2 my-4">Premier site français d'asic !</h2>      
+      <h2 className="h2 my-3 text-xl font-bold flex justify-center">Premier site français d'Asic !</h2>      
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <ProductItem

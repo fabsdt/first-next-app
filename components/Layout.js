@@ -52,7 +52,7 @@ export default function Layout({ title, children }) {
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
             <Link href="/">
               <a className="text-lg font-bold">
-                <img src="/logo-complet.png" alt="logo" className='h-6 w-10/15'/>
+                <img src="/logo-complet.png" alt="logo" className='h-10 w-10/15'/>
               </a>
 
             </Link>
