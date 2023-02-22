@@ -49,16 +49,16 @@ export default function Layout({ title, children }) {
 
       <div className="flex min-h-screen flex-col justify-between ">      
         <header>
-          <nav className="flex h-12 items-center px-4 justify-between shadow-md">
+          <nav className="flex h-12 items-center px-4 justify-between shadow-md"> 
             <Link href="/">
-              <a className="text-lg font-bold">
-                <img src="/logo-complet.png" alt="logo" className='h-10 w-10/15'/>
+              <a>
+                <img src="/logo-complet.png" alt="logo" className='h-6 w-10/15'/> 
               </a>
 
             </Link>
             <form
               onSubmit={submitHandler}
-              className="mx-auto  hidden w-full justify-center md:flex"
+              className="mx-auto  hidden w-full justify-center md:flex" 
             >
               <input
                 onChange={(e) => setQuery(e.target.value)}
@@ -74,10 +74,10 @@ export default function Layout({ title, children }) {
                 <SearchIcon className="h-5 w-"></SearchIcon>
               </button>
             </form>
-            <div className='flex'>
+            <div className='flex '>
               <Link href="/cart">
-                <a className="p-2 flex">
-                <ShoppingCartIcon />
+                <a className="p-2 flex ">
+                <ShoppingCartIcon className=' first-letter:bg-amber-300'/>
                   
                   {cartItemsCount > 0 && (
                     <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
